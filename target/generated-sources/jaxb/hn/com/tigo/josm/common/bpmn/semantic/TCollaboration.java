@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2022.08.09 a las 12:22:08 PM CST 
+// Generado el: 2022.08.09 a las 01:12:09 PM CST 
 //
 
 
@@ -165,10 +165,10 @@ public class TCollaboration
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link TTextAnnotation }{@code >}
-     * {@link JAXBElement }{@code <}{@link TGroup }{@code >}
-     * {@link JAXBElement }{@code <}{@link TAssociation }{@code >}
      * {@link JAXBElement }{@code <}{@link TArtifact }{@code >}
+     * {@link JAXBElement }{@code <}{@link TTextAnnotation }{@code >}
+     * {@link JAXBElement }{@code <}{@link TAssociation }{@code >}
+     * {@link JAXBElement }{@code <}{@link TGroup }{@code >}
      * 
      * 
      */
@@ -198,9 +198,9 @@ public class TCollaboration
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link TConversationNode }{@code >}
-     * {@link JAXBElement }{@code <}{@link TCallConversation }{@code >}
      * {@link JAXBElement }{@code <}{@link TSubConversation }{@code >}
      * {@link JAXBElement }{@code <}{@link TConversation }{@code >}
+     * {@link JAXBElement }{@code <}{@link TCallConversation }{@code >}
      * 
      * 
      */

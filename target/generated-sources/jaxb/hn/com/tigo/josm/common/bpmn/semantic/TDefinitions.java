@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2022.08.09 a las 12:22:08 PM CST 
+// Generado el: 2022.08.09 a las 01:12:09 PM CST 
 //
 
 
@@ -175,41 +175,41 @@ public class TDefinitions {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link TTimerEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TSignalEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TGlobalConversation }{@code >}
-     * {@link JAXBElement }{@code <}{@link TErrorEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TGlobalTask }{@code >}
-     * {@link JAXBElement }{@code <}{@link TResource }{@code >}
-     * {@link JAXBElement }{@code <}{@link TGlobalScriptTask }{@code >}
-     * {@link JAXBElement }{@code <}{@link TProcess }{@code >}
-     * {@link JAXBElement }{@code <}{@link TPartnerRole }{@code >}
-     * {@link JAXBElement }{@code <}{@link TEscalationEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TSignal }{@code >}
+     * {@link JAXBElement }{@code <}{@link TEventDefinition }{@code >}
      * {@link JAXBElement }{@code <}{@link TCorrelationProperty }{@code >}
      * {@link JAXBElement }{@code <}{@link TEscalation }{@code >}
-     * {@link JAXBElement }{@code <}{@link TGlobalManualTask }{@code >}
-     * {@link JAXBElement }{@code <}{@link TEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TLinkEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TPartnerEntity }{@code >}
-     * {@link JAXBElement }{@code <}{@link TCompensateEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TMessage }{@code >}
-     * {@link JAXBElement }{@code <}{@link TCollaboration }{@code >}
-     * {@link JAXBElement }{@code <}{@link TItemDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TError }{@code >}
-     * {@link JAXBElement }{@code <}{@link TGlobalBusinessRuleTask }{@code >}
-     * {@link JAXBElement }{@code <}{@link TGlobalUserTask }{@code >}
      * {@link JAXBElement }{@code <}{@link TMessageEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TInterface }{@code >}
-     * {@link JAXBElement }{@code <}{@link TCancelEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TCategory }{@code >}
-     * {@link JAXBElement }{@code <}{@link TTerminateEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TEndPoint }{@code >}
-     * {@link JAXBElement }{@code <}{@link TConditionalEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TGlobalManualTask }{@code >}
+     * {@link JAXBElement }{@code <}{@link TPartnerEntity }{@code >}
      * {@link JAXBElement }{@code <}{@link TRootElement }{@code >}
-     * {@link JAXBElement }{@code <}{@link TGlobalChoreographyTask }{@code >}
-     * {@link JAXBElement }{@code <}{@link TDataStore }{@code >}
+     * {@link JAXBElement }{@code <}{@link TGlobalTask }{@code >}
+     * {@link JAXBElement }{@code <}{@link TGlobalBusinessRuleTask }{@code >}
+     * {@link JAXBElement }{@code <}{@link TConditionalEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TTerminateEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TMessage }{@code >}
      * {@link JAXBElement }{@code <}{@link TChoreography }{@code >}
+     * {@link JAXBElement }{@code <}{@link TSignalEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TError }{@code >}
+     * {@link JAXBElement }{@code <}{@link TGlobalConversation }{@code >}
+     * {@link JAXBElement }{@code <}{@link TSignal }{@code >}
+     * {@link JAXBElement }{@code <}{@link TProcess }{@code >}
+     * {@link JAXBElement }{@code <}{@link TDataStore }{@code >}
+     * {@link JAXBElement }{@code <}{@link TGlobalChoreographyTask }{@code >}
+     * {@link JAXBElement }{@code <}{@link TItemDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TGlobalUserTask }{@code >}
+     * {@link JAXBElement }{@code <}{@link TCancelEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TEscalationEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TCategory }{@code >}
+     * {@link JAXBElement }{@code <}{@link TLinkEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TPartnerRole }{@code >}
+     * {@link JAXBElement }{@code <}{@link TCollaboration }{@code >}
+     * {@link JAXBElement }{@code <}{@link TGlobalScriptTask }{@code >}
+     * {@link JAXBElement }{@code <}{@link TInterface }{@code >}
+     * {@link JAXBElement }{@code <}{@link TEndPoint }{@code >}
+     * {@link JAXBElement }{@code <}{@link TErrorEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TResource }{@code >}
+     * {@link JAXBElement }{@code <}{@link TTimerEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TCompensateEventDefinition }{@code >}
      * 
      * 
      */

@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2022.08.09 a las 12:22:07 PM CST 
+// Generado el: 2022.08.09 a las 01:12:08 PM CST 
 //
 
 
@@ -107,11 +107,11 @@ public class ObjectFactory {
     private final static QName _DataBaseErrorMap_QNAME = new QName("http://tigo.com.hn/persistence/DatabaseErrorMapping/v1", "dataBaseErrorMap");
     private final static QName _ComissionPaquetigosAdapterConfig_QNAME = new QName("http://tigo.com.hn/ComissionPaquetigosAdapterConfig/V1", "ComissionPaquetigosAdapterConfig");
     private final static QName _USSDAdapterConfig_QNAME = new QName("http://tigo.com.hn/USSDAdapterConfig/V1", "USSDAdapterConfig");
+    private final static QName _PlatformSeparatorListParameterNameList_QNAME = new QName("http://tigo.com.hn/PlatformMappingConfigType/V1", "parameterNameList");
+    private final static QName _PlatformSeparatorListSeparatorCharacter_QNAME = new QName("http://tigo.com.hn/PlatformMappingConfigType/V1", "separatorCharacter");
     private final static QName _PlatformRegexListDetailOrderType_QNAME = new QName("http://tigo.com.hn/PlatformMappingConfigType/V1", "orderType");
     private final static QName _PlatformRegexListDetailProductId_QNAME = new QName("http://tigo.com.hn/PlatformMappingConfigType/V1", "productId");
     private final static QName _PlatformRegexListDetailQuantity_QNAME = new QName("http://tigo.com.hn/PlatformMappingConfigType/V1", "quantity");
-    private final static QName _PlatformSeparatorListParameterNameList_QNAME = new QName("http://tigo.com.hn/PlatformMappingConfigType/V1", "parameterNameList");
-    private final static QName _PlatformSeparatorListSeparatorCharacter_QNAME = new QName("http://tigo.com.hn/PlatformMappingConfigType/V1", "separatorCharacter");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: hn.com.tigo.josm.common.configuration.dto
@@ -1685,6 +1685,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterNameList }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tigo.com.hn/PlatformMappingConfigType/V1", name = "parameterNameList", scope = PlatformSeparatorList.class)
+    public JAXBElement<ParameterNameList> createPlatformSeparatorListParameterNameList(ParameterNameList value) {
+        return new JAXBElement<ParameterNameList>(_PlatformSeparatorListParameterNameList_QNAME, ParameterNameList.class, PlatformSeparatorList.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tigo.com.hn/PlatformMappingConfigType/V1", name = "separatorCharacter", scope = PlatformSeparatorList.class)
+    public JAXBElement<String> createPlatformSeparatorListSeparatorCharacter(String value) {
+        return new JAXBElement<String>(_PlatformSeparatorListSeparatorCharacter_QNAME, String.class, PlatformSeparatorList.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
@@ -1709,24 +1727,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://tigo.com.hn/PlatformMappingConfigType/V1", name = "quantity", scope = PlatformRegexListDetail.class)
     public JAXBElement<String> createPlatformRegexListDetailQuantity(String value) {
         return new JAXBElement<String>(_PlatformRegexListDetailQuantity_QNAME, String.class, PlatformRegexListDetail.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterNameList }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tigo.com.hn/PlatformMappingConfigType/V1", name = "parameterNameList", scope = PlatformSeparatorList.class)
-    public JAXBElement<ParameterNameList> createPlatformSeparatorListParameterNameList(ParameterNameList value) {
-        return new JAXBElement<ParameterNameList>(_PlatformSeparatorListParameterNameList_QNAME, ParameterNameList.class, PlatformSeparatorList.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tigo.com.hn/PlatformMappingConfigType/V1", name = "separatorCharacter", scope = PlatformSeparatorList.class)
-    public JAXBElement<String> createPlatformSeparatorListSeparatorCharacter(String value) {
-        return new JAXBElement<String>(_PlatformSeparatorListSeparatorCharacter_QNAME, String.class, PlatformSeparatorList.class, value);
     }
 
 }

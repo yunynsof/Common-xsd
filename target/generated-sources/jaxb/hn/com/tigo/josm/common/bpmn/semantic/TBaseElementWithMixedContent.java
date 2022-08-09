@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2022.08.09 a las 12:22:08 PM CST 
+// Generado el: 2022.08.09 a las 01:12:09 PM CST 
 //
 
 
@@ -62,8 +62,8 @@ import javax.xml.namespace.QName;
 public abstract class TBaseElementWithMixedContent {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "extensionElements", namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "documentation", namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "documentation", namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "extensionElements", namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", type = JAXBElement.class, required = false)
     })
     @XmlMixed
     protected List<Serializable> content;
@@ -94,8 +94,8 @@ public abstract class TBaseElementWithMixedContent {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link TDocumentation }{@code >}
-     * {@link String }
      * {@link JAXBElement }{@code <}{@link TExtensionElements }{@code >}
+     * {@link String }
      * 
      * 
      */
