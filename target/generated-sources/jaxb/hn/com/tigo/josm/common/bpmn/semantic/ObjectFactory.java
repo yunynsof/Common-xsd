@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2022.08.09 a las 09:31:31 AM CST 
+// Generado el: 2022.08.09 a las 12:22:08 PM CST 
 //
 
 
@@ -186,16 +186,16 @@ public class ObjectFactory {
     private final static QName _ConversationLink_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "conversationLink");
     private final static QName _MessageFlowAssociation_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "messageFlowAssociation");
     private final static QName _StandardLoopCharacteristics_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "standardLoopCharacteristics");
+    private final static QName _TLaneFlowNodeRef_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "flowNodeRef");
     private final static QName _TInputSetWhileExecutingInputRefs_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "whileExecutingInputRefs");
     private final static QName _TInputSetOutputSetRefs_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "outputSetRefs");
     private final static QName _TInputSetOptionalInputRefs_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "optionalInputRefs");
     private final static QName _TInputSetDataInputRefs_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "dataInputRefs");
-    private final static QName _TDataAssociationSourceRef_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "sourceRef");
-    private final static QName _TLaneFlowNodeRef_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "flowNodeRef");
     private final static QName _TOutputSetDataOutputRefs_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "dataOutputRefs");
     private final static QName _TOutputSetOptionalOutputRefs_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "optionalOutputRefs");
     private final static QName _TOutputSetWhileExecutingOutputRefs_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "whileExecutingOutputRefs");
     private final static QName _TOutputSetInputSetRefs_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "inputSetRefs");
+    private final static QName _TDataAssociationSourceRef_QNAME = new QName("http://www.omg.org/spec/BPMN/20100524/MODEL", "sourceRef");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: hn.com.tigo.josm.common.bpmn.semantic
@@ -2642,6 +2642,16 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", name = "flowNodeRef", scope = TLane.class)
+    @XmlIDREF
+    public JAXBElement<Object> createTLaneFlowNodeRef(Object value) {
+        return new JAXBElement<Object>(_TLaneFlowNodeRef_QNAME, Object.class, TLane.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", name = "whileExecutingInputRefs", scope = TInputSet.class)
     @XmlIDREF
     public JAXBElement<Object> createTInputSetWhileExecutingInputRefs(Object value) {
@@ -2682,26 +2692,6 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", name = "sourceRef", scope = TDataAssociation.class)
-    @XmlIDREF
-    public JAXBElement<Object> createTDataAssociationSourceRef(Object value) {
-        return new JAXBElement<Object>(_TDataAssociationSourceRef_QNAME, Object.class, TDataAssociation.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", name = "flowNodeRef", scope = TLane.class)
-    @XmlIDREF
-    public JAXBElement<Object> createTLaneFlowNodeRef(Object value) {
-        return new JAXBElement<Object>(_TLaneFlowNodeRef_QNAME, Object.class, TLane.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
-     * 
-     */
     @XmlElementDecl(namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", name = "dataOutputRefs", scope = TOutputSet.class)
     @XmlIDREF
     public JAXBElement<Object> createTOutputSetDataOutputRefs(Object value) {
@@ -2736,6 +2726,16 @@ public class ObjectFactory {
     @XmlIDREF
     public JAXBElement<Object> createTOutputSetInputSetRefs(Object value) {
         return new JAXBElement<Object>(_TOutputSetInputSetRefs_QNAME, Object.class, TOutputSet.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.omg.org/spec/BPMN/20100524/MODEL", name = "sourceRef", scope = TDataAssociation.class)
+    @XmlIDREF
+    public JAXBElement<Object> createTDataAssociationSourceRef(Object value) {
+        return new JAXBElement<Object>(_TDataAssociationSourceRef_QNAME, Object.class, TDataAssociation.class, value);
     }
 
 }

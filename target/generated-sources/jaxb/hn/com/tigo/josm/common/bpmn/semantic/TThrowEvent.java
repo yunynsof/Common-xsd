@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2022.08.09 a las 09:31:31 AM CST 
+// Generado el: 2022.08.09 a las 12:22:08 PM CST 
 //
 
 
@@ -167,17 +167,17 @@ public abstract class TThrowEvent
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link TSignalEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TLinkEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TMessageEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TConditionalEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TTimerEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TCompensateEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TEventDefinition }{@code >}
      * {@link JAXBElement }{@code <}{@link TEscalationEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TCancelEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TCompensateEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TSignalEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TTimerEventDefinition }{@code >}
      * {@link JAXBElement }{@code <}{@link TErrorEventDefinition }{@code >}
      * {@link JAXBElement }{@code <}{@link TTerminateEventDefinition }{@code >}
-     * {@link JAXBElement }{@code <}{@link TCancelEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TConditionalEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TMessageEventDefinition }{@code >}
+     * {@link JAXBElement }{@code <}{@link TLinkEventDefinition }{@code >}
      * 
      * 
      */

@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2022.08.09 a las 09:31:31 AM CST 
+// Generado el: 2022.08.09 a las 12:22:07 PM CST 
 //
 
 
@@ -136,58 +136,58 @@ public class ConfigurationType
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link ComissionPaquetigosAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CcwsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PlatformMappingConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MobiquityAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ComissionAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ZeroBalancePlatformAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HIB20StatusAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CDRAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AS400AdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CleaningSubscriptionsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PretupsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link FulfillmentProxyConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TigoMoneyAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TigoMoneyReverseTransactionAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PascAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SEAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PromotionAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link InternetIncompatibilityAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BoomerangAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DmsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IncentiveConsumptionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TigoApiAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PrestamitoAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HIB20StatusAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link InvoiceAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HssAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MasisaAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link KannelAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link NotifyAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BdoAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MobiquityAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PretupsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ZeroBalancePlatformAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link MasterStatusAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ExchangeAS400AdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CbsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IntrawayPublicIPAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SprProxyAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link NotifyAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ExchangeAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoamingAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IncentiveConsumptionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AS400AdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AmsysAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SubscriberACLAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link SubscriberLocationAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link SmsBlockerAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SubscriberACLAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SprAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoamingAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ScheduleAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CkgAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PlatformMappingConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link FulfillmentProxyConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RbtAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DeezerAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SprProxyAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PrestamitoAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link USSDAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TigoApiAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link VasStatementAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AmsysAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TigoMoneyAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ExchangeAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BasicAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CallLockingAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SprAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link SimAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TigoMoneyReverseTransactionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CbsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DmsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CallLockingAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ComissionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MasisaAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BdoAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ComissionPaquetigosAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link InternetIncompatibilityAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ExchangeAS400AdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CcwsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SEAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IntrawayPublicIPAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CkgAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link VasStatementAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CDRAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BoomerangAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link USSDAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DeezerAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PromotionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link KannelAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BasicAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CleaningSubscriptionsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HssAdapterConfigType }{@code >}
      *     
      */
     public JAXBElement<? extends AdapterConfigType> getAdapterConfig() {
@@ -199,58 +199,58 @@ public class ConfigurationType
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link ComissionPaquetigosAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CcwsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PlatformMappingConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MobiquityAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ComissionAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ZeroBalancePlatformAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HIB20StatusAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CDRAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AS400AdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CleaningSubscriptionsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PretupsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link FulfillmentProxyConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TigoMoneyAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TigoMoneyReverseTransactionAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PascAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SEAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PromotionAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link InternetIncompatibilityAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BoomerangAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DmsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IncentiveConsumptionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TigoApiAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PrestamitoAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HIB20StatusAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link InvoiceAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HssAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MasisaAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link KannelAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link NotifyAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BdoAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MobiquityAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PretupsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ZeroBalancePlatformAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link MasterStatusAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ExchangeAS400AdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CbsAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IntrawayPublicIPAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SprProxyAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link NotifyAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ExchangeAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoamingAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IncentiveConsumptionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AS400AdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AmsysAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SubscriberACLAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link SubscriberLocationAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link SmsBlockerAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SubscriberACLAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SprAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoamingAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ScheduleAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CkgAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PlatformMappingConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link FulfillmentProxyConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RbtAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DeezerAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SprProxyAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PrestamitoAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link USSDAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TigoApiAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link VasStatementAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AmsysAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TigoMoneyAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ExchangeAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BasicAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CallLockingAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SprAdapterConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link SimAdapterConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TigoMoneyReverseTransactionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CbsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DmsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CallLockingAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ComissionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MasisaAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BdoAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ComissionPaquetigosAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link InternetIncompatibilityAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ExchangeAS400AdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CcwsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SEAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IntrawayPublicIPAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CkgAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link VasStatementAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CDRAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BoomerangAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link USSDAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DeezerAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PromotionAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link KannelAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BasicAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CleaningSubscriptionsAdapterConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HssAdapterConfigType }{@code >}
      *     
      */
     public void setAdapterConfig(JAXBElement<? extends AdapterConfigType> value) {
@@ -379,10 +379,10 @@ public class ConfigurationType
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link ProxyUSSDConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ProxyKannelConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ProxyConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ProxyAS400ConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ProxyMobiquityConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ProxyKannelConfigType }{@code >}
      *     
      */
     public JAXBElement<? extends ProxyConfigType> getProxyConfig() {
@@ -395,10 +395,10 @@ public class ConfigurationType
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link ProxyUSSDConfigType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ProxyKannelConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ProxyConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ProxyAS400ConfigType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ProxyMobiquityConfigType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ProxyKannelConfigType }{@code >}
      *     
      */
     public void setProxyConfig(JAXBElement<? extends ProxyConfigType> value) {
