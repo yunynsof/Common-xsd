@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PromotionDetailCrudResponse"
+	xmlns:tns="http://www.example.org/PromotionDetailCrudResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+	<complexType name="PromotionDetailCrudDetail">
+		<sequence>
+			<element name="idPromotionDetail" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idPromotion" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idEventGroup" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="eventGroupName" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idActionGroup" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="actionGroupName" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionDetailCrudDetailResponseService">
+		<sequence>
+			<element name="apromotionCrudDetail" type="tns:PromotionDetailCrudDetail" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionDetailCrudResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="promotionDetailCrudList" type="tns:PromotionDetailCrudDetailResponseService" maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="promotionDetailCrudDetail" type="tns:PromotionDetailCrudDetail"></element>
+
+	<element name="promotionDetailCrudDetailResponseService"
+		type="tns:PromotionDetailCrudDetailResponseService">
+	</element>
+
+	<element name="promotionDetailCrudResponse" type="tns:PromotionDetailCrudResponse"></element>
+</schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PromotionMetricsProductResponse"
+	xmlns:tns="http://www.example.org/PromotionMetricsProductResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+	
+	<import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+		
+	<complexType name="AssociatePromDetail">
+		<sequence>
+			<element name="eventId"  type="long" maxOccurs="1" minOccurs="1"/>
+			<element name="eventName" type="string" maxOccurs="1" minOccurs="1"/>
+			<element name="eventDescription" type="string" maxOccurs="1" minOccurs="1"/>
+			<element name="eventTheshold" type="long" maxOccurs="1" minOccurs="1"/>			
+		</sequence>
+	</complexType>
+	
+	<complexType name="AssociatePromDetailResponseService">
+		<sequence>
+			<element name="associateProm" type="tns:AssociatePromDetail"
+			maxOccurs="unbounded" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="AssociatePromResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>					
+					<element name="associatePromoList" type="tns:AssociatePromDetailResponseService"
+					maxOccurs="1" minOccurs="1"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	<element name="associatePromDetail" type="tns:AssociatePromDetail"/>
+	<element name="associatePromDetailResponseService" type="tns:AssociatePromDetailResponseService"/>
+	<element name="associatePromResponse" type="tns:AssociatePromResponse"/>	
+</schema>

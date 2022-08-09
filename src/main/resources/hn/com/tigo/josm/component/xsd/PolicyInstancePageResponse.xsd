@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/component/policyInstancePageResponse/V1"
+	xmlns:tns="http://tigo.com.hn/component/policyInstancePageResponse/V1"		
+	elementFormDefault="qualified" 
+	xmlns:pref="http://www.tigo.com.hn/order/JOSMResponse/V1"	>
+	
+	
+	<import schemaLocation="JOSMResponse.xsd"
+		namespace="http://www.tigo.com.hn/order/JOSMResponse/V1"></import>	
+	
+	
+
+	<element name="policyInstanceDetail" type="tns:policyInstanceDetail" />
+	<complexType name="policyInstanceDetail" >	
+		<sequence>
+			<element name="idPolicyInstance" type="long" minOccurs="1" maxOccurs="1"/>
+			<element name="namePolicyInstance" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="idPolicy" type="long" minOccurs="1" maxOccurs="1" />
+			<element name="namePolicy" type="string" minOccurs="1" maxOccurs="1" />			
+		</sequence>
+	</complexType>
+
+	
+	<element name="policyInstanceResponseService" type="tns:policyInstanceResponseService" />
+	<complexType name="policyInstanceResponseService">
+		<sequence>
+			<element name="policyInstanceDetails" type="tns:policyInstanceDetail" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+
+
+	<element name="policyInstanceResponse" type="tns:policyInstanceResponse"
+			substitutionGroup="pref:JOSMResponse" />
+	<complexType name="policyInstanceResponse">
+		<complexContent>
+			<extension base="pref:JOSMResponse">
+				<sequence>											
+					<element name="policieInstances" type="tns:policyInstanceResponseService" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+
+</schema>

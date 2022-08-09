@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/component/pageElement/V1"
+	xmlns:tns2="http://tigo.com.hn/component/pageElement/V1" >
+	
+	<xsd:element name="pageElement" type="tns2:pageElement" />
+	<xsd:complexType name="pageElement">			
+		<xsd:sequence>
+			<xsd:element name="pageNumber" type="xsd:long" minOccurs="1" />
+			<xsd:element name="pageSize" type="xsd:long" minOccurs="1" />
+			<xsd:element name="numberOfPages" type="xsd:long" minOccurs="1" />
+			<xsd:element name="total" type="xsd:long" minOccurs="1" />
+		</xsd:sequence>	
+	</xsd:complexType>	
+		
+</xsd:schema>  

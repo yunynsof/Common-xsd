@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/component/productMessagePageResponse/V1"
+	xmlns:tns="http://tigo.com.hn/component/productMessagePageResponse/V1"	
+	xmlns:tns2="http://tigo.com.hn/component/pageElement/V1"	
+	elementFormDefault="qualified" 
+	xmlns:pref="http://www.tigo.com.hn/order/JOSMResponse/V1"	>
+	
+	
+	<import schemaLocation="JOSMResponse.xsd"
+		namespace="http://www.tigo.com.hn/order/JOSMResponse/V1"></import>	
+		
+	<import schemaLocation="pageElement.xsd"
+		namespace="http://tigo.com.hn/component/pageElement/V1"></import>		
+
+
+
+	<element name="productMessageDetail" type="tns:productMessageDetail" />
+	<complexType name="productMessageDetail" >	
+		<sequence>
+			<element name="idProductMessage" type="long" minOccurs="1" 	nillable="false" />	
+			<element name="idProduct" type="long" minOccurs="1" nillable="false" />
+			<element name="nameProduct" type="string" minOccurs="1" nillable="false"/>
+			<element name="idMessage" type="long" minOccurs="1" nillable="false"/>
+			<element name="textMessage" type="string" minOccurs="1" nillable="false"/>
+			<element name="startErrorCode" type="long" minOccurs="1" nillable="false" />
+			<element name="endErrorCode" type="long" minOccurs="1" nillable="false" />			
+		</sequence>
+	</complexType>
+	
+	
+	<element name="productMessageDetailResponseService" type="tns:productMessageDetailResponseService" />
+	<complexType name="productMessageDetailResponseService">
+		<sequence>
+			<element name="productMessageDetails" type="tns:productMessageDetail" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+
+	
+	 <element name="productMessagePageResponse" type="tns:productMessagePageResponse"
+			substitutionGroup="pref:JOSMResponse" />
+	<complexType name="productMessagePageResponse">
+		<complexContent>
+			<extension base="pref:JOSMResponse">
+				<sequence>	
+					<element name="PageDetails" type="tns2:pageElement" minOccurs="1" />											
+					<element name="productMessages" type="tns:productMessageDetailResponseService" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

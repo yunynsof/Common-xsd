@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/HIB20StatusAdapterConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/HIB20StatusAdapterConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+	</import>
+
+	<element name="HIB20StatusAdapterConfig" type="tns:HIB20StatusAdapterConfigType"
+		substitutionGroup="tns1:AdapterConfig" />
+		
+	<complexType name="HIB20StatusAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="dataSource" type="string" minOccurs="1" maxOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

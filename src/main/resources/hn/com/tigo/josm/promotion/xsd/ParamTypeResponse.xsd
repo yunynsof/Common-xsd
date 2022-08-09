@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ParamTypeResponse"
+	xmlns:tns="http://www.example.org/ParamTypeResponse" elementFormDefault="qualified"
+	xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+	<complexType name="ParamTypeDetail">
+		<sequence>			
+			<element name="idType" type="long" maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="nameType" type="string" maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="formatType" type="string" maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="formatExample" type="string" maxOccurs="1" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ParamTypeDetailResponseService">
+		<sequence>
+			<element name="paramTypeDetail" type="tns:ParamTypeDetail"
+				maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ParamTypeResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="ParamTypeList" type="tns:ParamTypeDetailResponseService"
+						maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="paramTypeDetail" type="tns:ParamTypeDetail"></element>
+
+	<element name="paramTypeDetailResponseService" type="tns:ParamTypeDetailResponseService">
+	</element>
+
+	<element name="paramTypeResponse" type="tns:ParamTypeResponse"></element>
+</schema>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/scheduler/orders/ScheduleResponse/V1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tigo.com.hn/scheduler/orders/ScheduleResponse/V1"
+	xmlns:mp="http://tigo.com/josm/gateway/services/order/MetaParametersDTO/V1"
+	elementFormDefault="qualified">
+	
+	<xsd:import schemaLocation="../../../../../../../hn/com/tigo/josm/common/order/xsd/MetaParametersDTO.xsd"
+		namespace="http://tigo.com/josm/gateway/services/order/MetaParametersDTO/V1" />
+		
+	<element name="scheduleResponse" type="tns:ScheduleResponse" />
+	<complexType name="ScheduleResponse">
+		<xsd:sequence>
+			<xsd:element name="responseCode" type="xsd:int"
+				minOccurs="0" />
+			<xsd:element name="responseDescription" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="returnValue" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</complexType>
+
+	<xsd:element name="scheduleWithOutScheduleTypeList" type="tns:ScheduleWithOutScheduleTypeList" />
+	<xsd:complexType name="ScheduleWithOutScheduleTypeList">
+		<xsd:sequence>
+			<xsd:element name="responseCode" type="xsd:int"
+				minOccurs="0" />
+			<xsd:element name="responseDescription" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="returnValue" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="listSchedule" type="tns:ScheduleWithOutScheduleType"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="scheduleWithOutScheduleType" type="tns:ScheduleWithOutScheduleType" />
+	<xsd:complexType name="ScheduleWithOutScheduleType">
+		<xsd:sequence>
+			<xsd:element name="scheduleId" type="xsd:long" minOccurs="1" />
+			<xsd:element name="taskId" type="xsd:long" minOccurs="1" />
+			<xsd:element name="scheduleDate" type="xsd:dateTime"
+				minOccurs="1" />
+			<xsd:element name="recurrent" type="xsd:string"
+				minOccurs="1" />
+			<xsd:element name="cronExpr" type="xsd:string" minOccurs="0" />
+			<xsd:element name="state" type="xsd:string" minOccurs="0" />
+			<xsd:element name="creationDate" type="xsd:dateTime"
+				minOccurs="0" />
+			<xsd:element name="description" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="threshold" type="xsd:long" minOccurs="0" />
+			<xsd:element name="request" type="xsd:string" minOccurs="0" />
+			<xsd:element name="retry" type="xsd:int" minOccurs="0" />
+			<xsd:element name="metaParameters" type="mp:MetaParameters"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>
+

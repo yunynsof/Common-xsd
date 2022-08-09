@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tigo.com.hn/CategoryResponse/v1"
+	xmlns:tns="http://www.tigo.com.hn/CategoryResponse/v1" elementFormDefault="qualified"
+	xmlns:pref="http://www.tigo.com.hn/PromotionResponse"
+	>
+	
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse" />
+	
+	
+	<element name="CategoryResponse" type="tns:CategoryResponseType" />
+	
+	<complexType name="CategoryResponseType">
+    	<complexContent>
+    		<extension base="pref:PromotionResponse">
+    			<sequence>
+    				<element name="categoryList" type="tns:CategoryList" maxOccurs="1" minOccurs="0" />
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+	
+	<complexType name="CategoryList">
+		<sequence>
+			<element name="categories" type="tns:Category" maxOccurs="unbounded" minOccurs="0" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="Category">
+		<sequence>
+			<element name="id" type="long"/>
+			<element name="name" type="string"/>
+			<element name="categoryTypeId" type="int"/>
+			<element name="behavior" type="int" />
+		</sequence>
+	</complexType>
+	
+</schema>

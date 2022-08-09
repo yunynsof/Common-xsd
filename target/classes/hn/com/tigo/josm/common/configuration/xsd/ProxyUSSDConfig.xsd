@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ProxyUSSDConfig/V1"
+	xmlns:tns="http://tigo.com.hn/ProxyUSSDConfig/V1" xmlns:sch="http://tigo.com.hn/ProxyConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import namespace="http://tigo.com.hn/ProxyConfigType/V1"
+		schemaLocation="ProxyConfigType.xsd" />
+
+	<element name="ProxyUSSDConfig" type="tns:ProxyUSSDConfigType"
+		substitutionGroup="sch:ProxyConfig" />
+
+
+	<complexType name="ProxyUSSDConfigType">
+		<complexContent>
+			<extension base="sch:ProxyConfigType" />
+		</complexContent>
+	</complexType>
+
+</schema>

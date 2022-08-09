@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://tigo.com.hn/ProxyConfiguration/V1"
+	xmlns:tns="http://tigo.com.hn/ProxyConfiguration/V1"
+	elementFormDefault="qualified" >
+	
+	<complexType name="ProxyElementResponse">
+		<sequence>
+			<element name="orderType" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="quantity" type="int" minOccurs="0" maxOccurs="1" />
+			<element name="productId" type="int" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+	
+</schema>

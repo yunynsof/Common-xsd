@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tigo.com.hn/order/JOSMResponse/V1"
+	xmlns:tns="http://www.tigo.com.hn/order/JOSMResponse/V1"
+	elementFormDefault="qualified" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0">
+
+	<element name="JOSMResponse" type="tns:JOSMResponse" />
+	<complexType name="JOSMResponse">
+		<sequence>
+			<element name="responseCode" type="string" />
+			<element name="responseMessage" type="string" />
+			<element name="responseDescription" type="string" />
+			<element name="responseId" type="string" maxOccurs="1"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings generateIsSetMethod="true">
+				<xjc:serializable uid="1" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+
+</schema>

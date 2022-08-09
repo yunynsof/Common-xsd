@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/ProxyActions/V1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:pac="http://tigo.com.hn/ProxyActions/V1"  
+	elementFormDefault="qualified">
+	
+	
+	<xsd:element name="proxyAction" type="pac:proxyActionArray" />
+	<xsd:complexType name="proxyActionArray">
+		<xsd:sequence>
+			<xsd:element name="proxyActionList" type="pac:ProxyActionType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="ProxyActionType">
+		<xsd:sequence>
+			<xsd:element name="name" type="string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="operation" type="string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="proxyActionParameterArray" type="pac:proxyActionParameterArray" minOccurs="1" maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="proxyActionParameterArray">
+		<xsd:sequence>
+			<xsd:element name="proxyActionParameterList" type="pac:ProxyActionParameterType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProxyActionParameterType">
+		<xsd:sequence>
+			<xsd:element name="name" type="string" minOccurs="1"
+				maxOccurs="1"></xsd:element>
+			<xsd:element name="value" type="string" minOccurs="1"
+				maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

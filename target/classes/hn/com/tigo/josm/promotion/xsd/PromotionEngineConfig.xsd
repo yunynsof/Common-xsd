@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/PromotionEngine/PromotionEngineConfig/V1"
+	xmlns:tns="http://tigo.com.hn/PromotionEngine/PromotionEngineConfig/V1"
+	elementFormDefault="qualified">
+	
+	<element name="promotionEngineConfig" type="tns:promotionEngineConfig" nillable="false"/>
+	
+	<complexType name="promotionEngineConfig">
+		<sequence>
+			<element name="cacheExpiration" type="int" nillable="false" />
+			<element name="executionTimeout" type="int" nillable="false" />
+			<element name="loadBlockSubscriberDelay" type="int" nillable="false" />
+			<element name="blockSubscriberSize" type="int" nillable="false" />
+			<element name="initialNotificationDelay" type="int" nillable="false" />	
+			<element name="url" type="string" nillable="false" />	
+			<element name="defaultEventType" type="string" nillable="false" />	
+		</sequence>
+	</complexType>
+	
+</schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/PromotionSType"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.example.org/PromotionSType" elementFormDefault="qualified"
+	xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+	
+	<xsd:import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></xsd:import>
+	
+	<xsd:element name="promotionSType" type="tns:PromotionSType"
+		substitutionGroup="pref:promotionResponse" />
+	<xsd:complexType name="PromotionSType">
+		<xsd:complexContent>
+			<xsd:extension base="pref:PromotionResponse">
+				<xsd:sequence>
+					<xsd:element name="promotionId" type="long" minOccurs="1" nillable="false" />
+					<xsd:element name="subscriberId" type="long" minOccurs="1" nillable="false" />
+					<xsd:element name="transactionId" type="string" minOccurs="1" nillable="false" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

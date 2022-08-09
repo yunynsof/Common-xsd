@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/MasterStatusMessageResponse"
+	xmlns:tns="http://www.example.org/MasterStatusMessageResponse"
+	elementFormDefault="qualified" xmlns:msr="http://www.tigo.com.hn/profile/MasterStatusResponse/V1">
+	
+	<import schemaLocation="MasterStatusResponse.xsd"
+		namespace="http://www.tigo.com.hn/profile/MasterStatusResponse/V1"></import>
+		
+	<element name="masterStatusMessageResponse" type="tns:MasterStatusMessageResponse"
+		substitutionGroup="msr:masterStatusResponse" />
+	<complexType name="MasterStatusMessageResponse">
+		<complexContent>
+			<extension base="msr:MasterStatusResponse">
+				<sequence>
+					<element name="code" type="int" minOccurs="1" />
+					<element name="message" type="string" minOccurs="1" />
+					<element name="messageDetail" type="string" minOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

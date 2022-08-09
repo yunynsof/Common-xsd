@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PromotionProgressBarResponse"
+	xmlns:tns="http://www.example.org/PromotionProgressBarResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+	<complexType name="PromotionProgressBarDetail">
+		<sequence>
+			<element name="id" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="transactionId" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idPromotion" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="namePromotion" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="executionDate" type="dateTime" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="totalCount" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="userName" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="state" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>		
+	
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionProgressBarResponseService">
+		<sequence>
+			<element name="promotionProgressBarDetail" type="tns:PromotionProgressBarDetail" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionProgressBarResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="promotionProgressBarList" type="tns:PromotionProgressBarResponseService" maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="promotionProgressBarResponse" type="tns:PromotionProgressBarResponse"></element>
+</schema>

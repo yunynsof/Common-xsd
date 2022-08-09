@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/policy/channel/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.tigo.com.hn/policy/channel/V1" xmlns:plc="http://tigo.com.hn/pluginconfiguration/V1">
+
+	<import schemaLocation="PluginConfiguration.xsd" namespace="http://tigo.com.hn/pluginconfiguration/V1" />
+	
+	<element name="allowedChannel" type="tns:AllowedChannel" substitutionGroup="plc:configuration" />
+
+	<complexType name="AllowedChannel">
+		<complexContent>
+			<extension base="plc:ConfigurationType">
+				<sequence>
+					<element name="ProductChannels" type="tns:ProductChannels" minOccurs="1" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	<complexType name="ProductChannels">
+		<sequence>
+			<element name="productId" type="long" minOccurs="1" maxOccurs="1"/>
+			<element name="channel" type="int" minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	
+
+</schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/promotion/PromotionRequest/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ap="http://tigo.com/josm/gateway/services/order/AdditionalParameterDTO/V1"
+	xmlns:tns="http://tigo.com.hn/promotion/PromotionRequest/v1" elementFormDefault="qualified">
+
+	<xsd:import schemaLocation="../../common/order/xsd/AdditionalParameterDTO.xsd" namespace="http://tigo.com/josm/gateway/services/order/AdditionalParameterDTO/V1"/>
+	
+	<xsd:element name="promotionEngineRequest" type="tns:PromotionEngineRequest" />
+	
+	<xsd:complexType name="PromotionEngineRequest">
+		<xsd:sequence>
+			<xsd:element name="msisdn" type="int" minOccurs="1" nillable="false" />
+			<xsd:element name="eventType" type="string" minOccurs="1" nillable="false" />
+			<xsd:element name="transactionId" type="string" minOccurs="1" nillable="false" />
+			<xsd:element name="forLoad" type="boolean" minOccurs="1" nillable="false" default="false"/>
+			<xsd:element name="additionalParameters" type="ap:AdditionalParameters" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+</xsd:schema>

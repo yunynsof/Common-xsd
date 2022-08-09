@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PromotionMetricsDataResponse"
+	xmlns:tns="http://www.example.org/PromotionMetricsDataResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="PromotionMetricsDataDetail">
+		<sequence>
+			<element name="executionDate" type="dateTime" maxOccurs="1"
+				minOccurs="1" />
+			<element name="totalCount" type="long" maxOccurs="1"
+				minOccurs="1" />
+			<element name="user" type="string" maxOccurs="1" minOccurs="1" />
+			<element name="state" type="string" maxOccurs="1" minOccurs="1" />
+			<element name="errorCount" type="long" maxOccurs="1"
+				minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionMetricsDetailResponseService">
+		<sequence>
+			<element name="idPromotion" type="long" maxOccurs="1"
+				minOccurs="1" />
+			<element name="namePromotion" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="transaction" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="promotionMetricsData" type="tns:PromotionMetricsDataDetail"
+				maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionMetricsDetailService">
+		<sequence>
+			<element name="promotionMetricsDetail" type="tns:PromotionMetricsDetailResponseService"
+				maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionMetricsDataResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="promotionMetricsDetailServiceVar" type="tns:PromotionMetricsDetailService"
+						maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="promotionMetricsDataDetail" type="tns:PromotionMetricsDataDetail" />
+
+	<element name="promotionMetricsDetailResponseService" type="tns:PromotionMetricsDetailResponseService" />
+
+	<element name="promotionMetricsDetailService" type="tns:PromotionMetricsDetailService" />
+
+	<element name="promotionMetricsDataResponse" type="tns:PromotionMetricsDataResponse" />
+
+</schema>

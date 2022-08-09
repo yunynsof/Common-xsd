@@ -1,0 +1,235 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com/josm/subscription/services/subscription/v1/schema"
+	xmlns:tns="http://tigo.com/josm/subscription/services/subscription/v1/schema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:complexType name="activateSubscription_Type">
+		<xs:sequence>
+			<xs:element name="transactionId" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="channelId" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="subscription" type="tns:subscription_Type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="subscription_Type">
+		<xs:sequence>
+			<xs:element name="subscriberId" type="tns:SubscriberId_Type" minOccurs="1" nillable="false" />
+			<xs:element name="productId" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:long">
+						<xs:minInclusive value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="startDate" type="xs:dateTime" minOccurs="1"
+				nillable="false" />
+			<xs:element name="recurrenceMinutes" minOccurs="1"
+				nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="attempts" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="renewals" minOccurs="0">
+				<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+			</xs:element>
+			<xs:element name="warningMessage" type="tns:warningMessage_Type"
+				minOccurs="0" />
+			<xs:element name="error" type="xs:boolean" minOccurs="1"
+				nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="warningMessage_Type">
+		<xs:sequence>
+			<xs:element name="from" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="message" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="warningMinutes" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="deactivateSubscription_Type">
+		<xs:sequence>
+			<xs:element name="transactionId" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="subscriberId" type="tns:SubscriberId_Type" minOccurs="1" nillable="false" />
+			<xs:element name="productId" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:long">
+						<xs:minInclusive value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cancellationReason" minOccurs="1" 	nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="notify" type="xs:boolean" minOccurs="1" nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="deactivateSubscriptionsAll_Type">
+		<xs:sequence>
+			<xs:element name="transactionId" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="subscriberId" type="tns:SubscriberId_Type" minOccurs="1"
+				nillable="false" />
+			<xs:element name="cancellationReason" minOccurs="1"
+				nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="verifySubscription_Type">
+		<xs:sequence>
+			<xs:element name="transactionId" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="subscriberId" type="tns:SubscriberId_Type" minOccurs="1"
+				nillable="false" />
+			<xs:element name="familyId" minOccurs="1"  nillable="false" >
+				<xs:simpleType >
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="endDateProduct" type="xs:dateTime"
+				minOccurs="1" nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="messageACK_Type">
+		<xs:sequence>
+			<xs:element name="responseCode" type="xs:int" />
+			<xs:element name="responseDescription" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="suscriptions_Type">
+		<xs:sequence>
+			<xs:element name="suscription" type="tns:suscription_Type"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="suscription_Type">
+		<xs:sequence>
+			<xs:element name="productId" type="xs:long" />
+			<xs:element name="state" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	
+		<xs:complexType name="changeNumber_Type">
+		<xs:sequence>
+			<xs:element name="transactionId" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+      		<xs:element name="currentSubscriber" type="tns:SubscriberId_Type"/>
+      		<xs:element name="newSubscriber" type="tns:SubscriberId_Type"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="messageFault_Type">
+		<xs:sequence>
+			<xs:element name="Error" type="xs:int" />
+			<xs:element name="Description" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="SubscriberId_Type">
+		<xs:restriction base="xs:long">
+			 <xs:pattern value="[0-9]{8}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="ActivateSubscription" type="tns:activateSubscription_Type" />
+	<xs:element name="DeactivateSubscription" type="tns:deactivateSubscription_Type" />
+	<xs:element name="DeactivateSubscriptionsAll" type="tns:deactivateSubscriptionsAll_Type" />
+	<xs:element name="VerifySubscription" type="tns:verifySubscription_Type" />
+	<xs:element name="ChangeNumber" type="tns:changeNumber_Type"/>
+	<xs:element name="MessageACK" type="tns:messageACK_Type" />
+	<xs:element name="MessageFault" type="tns:messageFault_Type" />
+	
+	
+	<xs:annotation>
+		<xs:appinfo>
+			<jaxb:globalBindings generateIsSetMethod="true">
+				<xjc:serializable uid="1" />
+			</jaxb:globalBindings>
+		</xs:appinfo>
+	</xs:annotation>
+
+
+</xs:schema>

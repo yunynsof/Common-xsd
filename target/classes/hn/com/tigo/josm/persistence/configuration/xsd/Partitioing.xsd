@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tigo.com.hn/persistence/partitioing/V1"
+	xmlns:tns="http://www.tigo.com.hn/persistence/partitioing/V1"
+	elementFormDefault="qualified">
+
+	<element name="partitioning" type="tns:Partitioning" />
+	<complexType name="Partitioning">
+		<sequence>
+			<element name="timeOut" type="int" minOccurs="1" />
+			<element name="mod" type="int" minOccurs="1" />
+			<element name="complexPartitioning" type="tns:ComplexPartitioning"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ComplexPartitioning">
+		<sequence>
+			<element name="partition" type="tns:Partition" nillable="true"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Partition">
+		<sequence>
+			<element name="name" type="string" minOccurs="1" />
+			<element name="position" type="long" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+</schema>

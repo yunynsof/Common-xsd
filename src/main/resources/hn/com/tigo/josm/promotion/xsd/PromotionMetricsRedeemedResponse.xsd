@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PromotionMetricsRedeemedResponse"
+	xmlns:tns="http://www.example.org/PromotionMetricsRedeemedResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="PromotionMetricsRedeemedDetail">
+		<sequence>
+			<element name="idEvent" type="long" maxOccurs="1" minOccurs="1" />
+			<element name="eventName" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="redeemed" type="long" maxOccurs="1" minOccurs="1" />
+			<element name="redeemedPercent" type="double" maxOccurs="1"
+				minOccurs="1" />
+			<element name="notRedeemed" type="long" maxOccurs="1"
+				minOccurs="1" />
+			<element name="notRedeemedPercent" type="double" maxOccurs="1"
+				minOccurs="1" />
+			<element name="description" type="string" maxOccurs="1"
+				minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionRedeemedDetailResponseService">
+		<sequence>
+			<element name="promotionMetricsRedeemed" type="tns:PromotionMetricsRedeemedDetail"
+				maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionMetricsRedeemedResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="promotionMetricsRedeemedList" type="tns:PromotionRedeemedDetailResponseService"
+						maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="promotionMetricsRedeemedDetail" type="tns:PromotionMetricsRedeemedDetail" />
+
+	<element name="promotionRedeemedDetailResponseService" type="tns:PromotionRedeemedDetailResponseService" />
+
+	<element name="promotionMetricsRedeemedResponse" type="tns:PromotionMetricsRedeemedResponse" />
+
+</schema>

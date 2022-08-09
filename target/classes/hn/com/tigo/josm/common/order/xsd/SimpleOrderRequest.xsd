@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://tigo.com/josm/gateway/services/order/SimpleOrderRequest/V1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ap="http://tigo.com/josm/gateway/services/order/AdditionalParameterDTO/V1"
+	xmlns:tns="http://tigo.com/josm/gateway/services/order/SimpleOrderRequest/V1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc"
+  	jaxb:version="2.1" >
+  	
+	<xsd:import schemaLocation="AdditionalParameterDTO.xsd" namespace="http://tigo.com/josm/gateway/services/order/AdditionalParameterDTO/V1"/>
+	<xsd:element name="simpleOrderRequest" type="tns:SimpleOrderRequest" nillable="true" />
+
+	<xsd:annotation>
+	   <xsd:appinfo>
+	      <jaxb:globalBindings generateIsSetMethod="true">
+	          <xjc:serializable uid="1"/>
+	      </jaxb:globalBindings>
+	   </xsd:appinfo>
+	</xsd:annotation> 
+	
+	<xsd:simpleType name="tSubscriberId">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{1,19}" />			
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="SimpleOrderRequest">
+		<xsd:sequence>
+			<xsd:element name="channelId" type="xsd:int" minOccurs="1" 	nillable="false" />
+			<xsd:element name="subscriberId" type="tns:tSubscriberId" minOccurs="1" nillable="false" />
+			<xsd:element name="productId" type="xsd:long" minOccurs="1" nillable="false" />
+			<xsd:element name="quantity" type="xsd:int" minOccurs="1" nillable="false" />
+			<xsd:element name="externalTransacionId" type="xsd:string" minOccurs="0" />
+			<xsd:element name="comment" type="xsd:string" minOccurs="0" />
+			<xsd:element name="additionalParameters" type="ap:AdditionalParameters" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+
+</xsd:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tigo.com.hn/PromotionResponse"
+	xmlns:tns="http://www.tigo.com.hn/PromotionResponse"
+	elementFormDefault="qualified" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:ltp="http://www.example.org/PromotionLType" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0">
+
+	<import schemaLocation="PromotionLType.xsd" namespace="http://www.example.org/PromotionLType"></import>
+
+	<element name="promotionResponse" type="tns:PromotionResponse" />
+	<complexType name="PromotionResponse">
+		<sequence>
+			<element name="promotionLNType" type="tns:PromotionLNType" />
+			<element name="responseCode" type="int" minOccurs="1"
+				nillable="false" />
+			<element name="responseDescription" type="string"
+				minOccurs="1" nillable="false" />
+			<element name="responseDescriptionDetail" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="responseId" type="string" maxOccurs="1" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionLNType">
+		<sequence>
+			<element name="promotionLTypeResponse" type="ltp:PromotionLType"
+				minOccurs="0" maxOccurs="unbounded" nillable="false" />
+		</sequence>
+	</complexType>
+
+
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings generateIsSetMethod="true">
+				<xjc:serializable uid="1" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+
+
+</schema>

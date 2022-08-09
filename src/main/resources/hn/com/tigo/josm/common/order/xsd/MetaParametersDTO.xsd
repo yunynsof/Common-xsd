@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://tigo.com/josm/gateway/services/order/MetaParametersDTO/V1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://tigo.com/josm/gateway/services/order/MetaParametersDTO/V1">
+	
+	<xsd:element name="metaParameters" type="tns:MetaParameters" nillable="true" />
+		<xsd:complexType name="MetaParameters">
+		<xsd:sequence>
+			<xsd:element name="parameterMeta" type="tns:ParameterMeta"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+		
+	
+	<xsd:complexType name="ParameterMeta">
+		<xsd:sequence>
+			<xsd:element name="name" minOccurs="1" nillable="false">
+				<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="1"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="value"  minOccurs="1" nillable="false">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+</xsd:schema>

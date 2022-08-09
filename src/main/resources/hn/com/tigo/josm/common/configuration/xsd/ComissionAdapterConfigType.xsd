@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ComissionAdapterConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/ComissionAdapterConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+	</import>
+
+	<element name="ComissionAdapterConfig" type="tns:ComissionAdapterConfigType"
+		substitutionGroup="tns1:AdapterConfig" />
+		
+	<complexType name="ComissionAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="dataSource" type="string" minOccurs="1" maxOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

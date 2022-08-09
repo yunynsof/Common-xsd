@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PromotionMetricsLoadSubscriberResponse"
+	xmlns:tns="http://www.example.org/PromotionMetricsLoadSubscriberResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="PromotionMetricsLoadSubscriberDetail">
+		<sequence>
+			<element name="success" type="long" maxOccurs="1" minOccurs="1" />
+			<element name="successPercent" type="double" maxOccurs="1"
+				minOccurs="1" />
+			<element name="failed" type="long" maxOccurs="1" minOccurs="1" />
+			<element name="failedPercent" type="double" maxOccurs="1"
+				minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionMetricsLoadSubscriberResponseService">
+		<sequence>
+			<element name="promotionMetricsLoadSubscriberDetailVar" type="tns:PromotionMetricsLoadSubscriberDetail"
+				maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionMetricsLoadSubscriberResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="promotionMetricsLoadSubscriberResponseServiceVar"
+						type="tns:PromotionMetricsLoadSubscriberResponseService"
+						maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="promotionMetricsLoadSubscriberDetail" type="tns:PromotionMetricsLoadSubscriberDetail" />
+
+	<element name="promotionMetricsLoadSubscriberResponseService"
+		type="tns:PromotionMetricsLoadSubscriberResponseService" />
+
+	<element name="promotionMetricsLoadSubscriberResponse" type="tns:PromotionMetricsLoadSubscriberResponse" />
+
+</schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/MasterStatusAdapterConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/MasterStatusAdapterConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+	</import>
+	
+	<element name="MasterStatusAdapterConfig" type="tns:MasterStatusAdapterConfigType"
+	 substitutionGroup="tns1:AdapterConfig"/>
+
+	<complexType name="MasterStatusAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="changeSubscriberIdProfile" type="string" minOccurs="1" maxOccurs="1" />
+					<element name="changeSubscriberIdAttribute" type="string" minOccurs="1" maxOccurs="1" />
+					<element name="subscriberProfileNumberRecord" type="int" minOccurs="1" maxOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

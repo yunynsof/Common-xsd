@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ProxyMobiquityRequest/V1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	xmlns:tns="http://tigo.com.hn/ProxyMobiquityRequest/V1" elementFormDefault="qualified">
+	
+	<element name="ProxyMobiquityRequest" type="tns:ProxyMobiquityRequestType"/>
+
+	<complexType name="ProxyMobiquityRequestType">
+	</complexType>
+	
+
+	
+</schema>

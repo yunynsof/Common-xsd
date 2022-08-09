@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/PromotionLType"
+	xmlns:tns="http://www.example.org/PromotionLType" elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+	
+	<xsd:import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></xsd:import>
+	
+	<xsd:element name="promotionLType" type="tns:PromotionLType"
+		substitutionGroup="pref:promotionResponse" />
+	<xsd:complexType name="PromotionLType">
+		<xsd:complexContent>
+			<xsd:extension base="pref:PromotionResponse">
+				<xsd:sequence>
+					<xsd:element name="promotionId" type="long" minOccurs="1" nillable="false" />
+					<xsd:element name="categoryId" type="long" minOccurs="1" nillable="false" />
+					<xsd:element name="productId" type="long" minOccurs="1" nillable="false" />
+					<xsd:element name="productGift" type="long" minOccurs="1" nillable="false" />
+					<xsd:element name="startDate" type="string" minOccurs="1" nillable="false" />
+					<xsd:element name="endDate" type="string" minOccurs="1" nillable="false" />
+					<xsd:element name="state" type="long" minOccurs="1" nillable="false" />
+			    	<xsd:element name="attributes" type="tns:Attributes" nillable="true" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	
+	<!-- <element name="attributes" type="tns:Attributes" nillable="true" /> -->
+	<xsd:complexType name="Attributes">
+		<xsd:sequence>
+			<xsd:element name="attribute" type="tns:Attribute" nillable="true"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Attribute">
+		<xsd:sequence>
+			<xsd:element name="name" type="string" minOccurs="1" nillable="false" />
+			<xsd:element name="value" type="string" minOccurs="1" nillable="false" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

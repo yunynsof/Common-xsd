@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/scheduler/balancing/V1"
+	xmlns:tns="http://tigo.com.hn/scheduler/balancing/V1"
+	elementFormDefault="qualified">
+
+	<element name="balancing" type="tns:Balancing" />
+	<complexType name="Balancing">
+		<sequence>
+			<element name="mod" type="int" minOccurs="1" />
+			<element name="complexBalancing" type="tns:ComplexBalancing"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ComplexBalancing">
+		<sequence>
+			<element name="balance" type="tns:Balance" nillable="true"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Balance">
+		<sequence>
+			<element name="name" type="string" minOccurs="1" />
+			<element name="position" type="long" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+</schema>

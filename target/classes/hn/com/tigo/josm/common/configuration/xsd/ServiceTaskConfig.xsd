@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ServiceTask/V1"
+	xmlns:tns="http://tigo.com.hn/ServiceTask/V1"
+	elementFormDefault="qualified">
+	
+	<complexType name="ServiceTaskType">
+		<sequence>
+			<element name="serviceTask" type="tns:ServiceTaskAttributes"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+    <complexType name="ServiceTaskAttributes">
+        <sequence>
+            <element name="serviceName" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="serviceJndi" type="string" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+    </complexType>
+    
+    
+</schema>

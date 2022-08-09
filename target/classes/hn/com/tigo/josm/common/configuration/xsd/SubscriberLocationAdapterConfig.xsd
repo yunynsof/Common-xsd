@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/SubscriberLocationAdapterConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/SubscriberLocationAdapterConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+	</import>
+	
+	<element name="SubscriberLocationConfig" type="tns:SubscriberLocationAdapterConfigType"
+	 substitutionGroup="tns1:AdapterConfig"/>
+
+	<complexType name="SubscriberLocationAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+			<sequence>
+					<element name="errorCodes" type="string" minOccurs="1"
+						maxOccurs="unbounded" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

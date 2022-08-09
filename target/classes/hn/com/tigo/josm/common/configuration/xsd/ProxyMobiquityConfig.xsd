@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ProxyMobiquityConfig/V1"
+	xmlns:tns="http://tigo.com.hn/ProxyMobiquityConfig/V1" xmlns:sch="http://tigo.com.hn/ProxyConfigType/V1"
+	elementFormDefault="qualified">
+	
+	<import namespace="http://tigo.com.hn/ProxyConfigType/V1"
+		schemaLocation="ProxyConfigType.xsd" />
+
+	<element name="ProxyMobiquityConfig" type="tns:ProxyMobiquityConfigType"
+		substitutionGroup="sch:ProxyConfig" />
+
+	<complexType name="ProxyMobiquityConfigType">
+		<complexContent>
+			<extension base="sch:ProxyConfigType">
+				<sequence>
+					<element name="errorMessage" type="string"
+						minOccurs="1" maxOccurs="1" />
+					<element name="urlService" type="string"
+						minOccurs="1" maxOccurs="1" />
+					<element name="user" type="string"
+						minOccurs="1" maxOccurs="1" />
+					<element name="password" type="string"
+						minOccurs="1" maxOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	
+</schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/OrderExecutionResponse/V1"
+	xmlns:tns="http://tigo.com.hn/OrderExecutionResponse/V1"
+	elementFormDefault="qualified">
+	
+	<complexType name="OrderExecutionResponse">
+		<sequence>
+			<element name="resultCode" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="resultDescription" type="string"
+				minOccurs="1" maxOccurs="1" />
+			<element name="parameters" type="tns:ParameterType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+    <complexType name="ParameterType">
+        <sequence>
+            <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="value" type="string" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+    </complexType>
+    
+    
+</schema>

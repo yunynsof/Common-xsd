@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/scheduler/orders/ScheduleSimpleRequest/V1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://tigo.com.hn/scheduler/orders/ScheduleSimpleRequest/V1"
+	xmlns:mp="http://tigo.com/josm/gateway/services/order/MetaParametersDTO/V1"
+	xmlns:cor="http://tigo.com/josm/gateway/services/order/ComplexOrderRequest/V1"
+	elementFormDefault="qualified">
+	
+	<xsd:import schemaLocation="../../../../../../../hn/com/tigo/josm/common/order/xsd/ComplexOrderRequest.xsd"
+		namespace="http://tigo.com/josm/gateway/services/order/ComplexOrderRequest/V1" />
+	<xsd:import schemaLocation="../../../../../../../hn/com/tigo/josm/common/order/xsd/MetaParametersDTO.xsd"
+		namespace="http://tigo.com/josm/gateway/services/order/MetaParametersDTO/V1" />
+
+  <xsd:complexType name="ScheduleComplexRequest">
+    <xsd:sequence>
+      <xsd:element name="subscriberId" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="taskId" type="xsd:long" minOccurs="1"/>
+      <xsd:element name="scheduleType" type="xsd:long" minOccurs="1"/>
+      <xsd:element name="scheduleDate" type="xsd:dateTime" minOccurs="1"/>
+      <xsd:element name="recurrent" type="xsd:boolean" minOccurs="1"/>
+      <xsd:element name="cronExpr" type="xsd:string" minOccurs="0"/>
+	  <xsd:element name="threshold" type="xsd:long" minOccurs="0"/>
+	  <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="complexOrderRequest" type="cor:ComplexOrderRequest" minOccurs="1"/>
+      <xsd:element name="metaParameters" type="mp:MetaParameters" minOccurs="0" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+

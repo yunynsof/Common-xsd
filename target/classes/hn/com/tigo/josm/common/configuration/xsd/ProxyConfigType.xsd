@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ProxyConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/ProxyConfigType/V1" elementFormDefault="qualified">
+
+	<element name="ProxyConfig" type="tns:ProxyConfigType" />
+
+	<complexType name="ProxyConfigType">
+		<sequence>
+			<element name="jndiGatewayRemote" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="jndiPlatformMappingAdapterRemote" type="string"
+				minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+</schema>

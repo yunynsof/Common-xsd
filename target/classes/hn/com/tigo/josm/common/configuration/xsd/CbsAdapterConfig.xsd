@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/CbsAdapterConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/CbsAdapterConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+	
+	<element name="CbsAdapterConfig" type="tns:CbsAdapterConfigType" substitutionGroup="tns1:AdapterConfig"/>
+	<complexType name="CbsAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="version" type="string"></element>
+					<element name="businessCode" type="string"></element>
+					<element name="beid" type="string"></element>
+					<element name="brid" type="string"></element>
+					<element name="loginSystemCode" type="string"></element>
+					<element name="operatorId" type="string"></element>
+					<element name="channelId" type="string"></element>
+					<element name="timeType" type="string"></element>
+					<element name="timeZoneId" type="string"></element>
+					<element name="servicePathAR" type="string"></element>
+					<element name="servicePathBB" type="string"></element>
+					<element name="servicePathBC" type="string"></element>
+					<element name="endpointIP" type="string"></element>
+					<element name="fetchRows" type="string"></element>
+					<element name="ceros" type="string"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

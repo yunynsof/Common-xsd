@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/TotalCounterEventResponse"
+	xmlns:tns="http://www.example.org/TotalCounterEventResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="TotalCounterEventDetail">
+		<sequence>
+			<element name="description" type="string" maxOccurs="1" minOccurs="1" />
+			<element name="totalCounter" type="string" maxOccurs="1" minOccurs="1" />
+			<element name="threshold" type="string" maxOccurs="1" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="TotalCounterEventResponseService">
+		<sequence>
+			<element name="counterEvent"
+				type="tns:TotalCounterEventDetail" maxOccurs="unbounded" minOccurs="0">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="TotalCounterEventResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="TotalCounterEventList" type="tns:TotalCounterEventResponseService" maxOccurs="1" minOccurs="1"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="totalCounterEventDetail" type="tns:TotalCounterEventDetail"></element>
+
+	<element name="totalCounterEventResponse"
+		type="tns:TotalCounterEventResponse">
+	</element>
+
+	<element name="totalCounterEventResponseService"
+		type="tns:TotalCounterEventResponseService">
+	</element>
+</schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.tigo.com.hn/EventGroupDetailRequest/V1"
+	xmlns:tns="http://www.tigo.com.hn/EventGroupDetailRequest/V1"
+	elementFormDefault="qualified" >
+
+	<element name="eventGroupDetailList"
+		type="tns:EventGroupDetailRequestType">
+	</element>
+
+	<complexType name="EventGroupDetailRequestType">
+		<sequence>
+			<element name="idEvent" type="long" maxOccurs="1" minOccurs="1" />
+			<element name="threshold" type="long" maxOccurs="1"	minOccurs="1" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="EventGroupDetailListType">
+		<sequence>
+			<element name="eventGroupDetailDetailList" type="tns:EventGroupDetailRequestType" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+</schema>

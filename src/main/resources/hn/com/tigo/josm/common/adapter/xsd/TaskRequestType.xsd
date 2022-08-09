@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://adapter.josm.tigo.com.hn/RequestType/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	xmlns:tns="http://adapter.josm.tigo.com.hn/RequestType/V1"
+	xmlns:pref="http://tigo.com/enterprise/resources/parameters/simple/v1/schema">
+
+	<import schemaLocation="Parameters.xsd" namespace="http://tigo.com/enterprise/resources/parameters/simple/v1/schema"></import>
+	<complexType name="TaskRequestType">
+		<sequence>
+			<element name="transactionId" type="string"></element>
+			<element name="parameters" type="pref:parameter_array"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings generateIsSetMethod="true">
+				<xjc:serializable uid="1" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+</schema>

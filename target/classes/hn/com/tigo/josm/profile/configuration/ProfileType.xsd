@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/profile/ProfileTypeDetail/V1"
+	xmlns:tns="http://tigo.com.hn/profile/ProfileTypeDetail/V1" elementFormDefault="qualified"
+	xmlns:msr="http://www.tigo.com.hn/profile/MasterStatusResponse/V1"
+	>
+	
+		
+	<import schemaLocation="MasterStatusResponse.xsd" 
+	namespace="http://www.tigo.com.hn/profile/MasterStatusResponse/V1"></import>
+
+	<element name="profileTypeDetail" type="tns:ProfileTypeDetail" />
+	<complexType name="ProfileTypeDetail">
+		<sequence>
+			<element name="idProfileType" type="long" minOccurs="1" nillable="false" />
+			<element name="nameProfileType" type="string" minOccurs="1" nillable="false" />
+			<element name="descriptionProfileType" type="string" minOccurs="1" nillable="true" />
+		</sequence>
+	</complexType>
+
+	<element name="profileTypeResponseService" type="tns:ProfileTypeResponseService"
+		substitutionGroup="msr:masterStatusResponse" />
+	<complexType name="ProfileTypeResponseService">
+		<complexContent>
+			<extension base="msr:MasterStatusResponse">
+				<sequence>
+					<element ref="tns:profileTypeDetail" minOccurs="1" maxOccurs="unbounded" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

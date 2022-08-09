@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com/josm/xquery/XqueryConfiguration/V1"
+	xmlns:tns="http://tigo.com/josm/xquery/XqueryConfiguration/V1"
+	elementFormDefault="qualified" >
+
+	<element name="xqueryConfiguration" type="tns:XqueryConfiguration" />
+	<complexType name="XqueryConfiguration">
+		<sequence>
+			<element name="datasources" type="tns:Datasources" />
+			<element name="expirationTime" type="int" />
+			<element name="maximumCapacityConnection" type="int" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Datasources">
+		<sequence>
+			<element name="datasources" type="tns:Datasource" nillable="false"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Datasource">
+		<sequence>
+			<element name="name" type="string" />
+			<element name="jndi" type="string" />
+		</sequence>
+	</complexType>
+
+</schema>

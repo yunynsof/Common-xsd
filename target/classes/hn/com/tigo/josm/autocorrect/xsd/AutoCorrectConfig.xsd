@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://tigo.com.hn/autoCorrect/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://tigo.com.hn/autoCorrect/V1">
+
+	<complexType name="AutoCorrectType">
+		<sequence>
+			<element name="delayCacheDictionary" type="string" minOccurs="1"
+				maxOccurs="1" />
+		</sequence>
+	</complexType>
+</schema>

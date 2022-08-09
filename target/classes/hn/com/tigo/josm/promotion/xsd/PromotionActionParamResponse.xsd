@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PromotionActionParamResponse"
+	xmlns:tns="http://www.example.org/PromotionActionParamResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+	<complexType name="PromotionActionParamDetail">
+		<sequence>
+			<element name="id" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idPromotion" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idEventGroup" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idAction" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idActionGroupDetail" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="nameParam" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="valueParam" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionActionParamResponseService">
+		<sequence>
+			<element name="promotionActionParamDetail" type="tns:PromotionActionParamDetail" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PromotionActionParamResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="promotionActionParamList" type="tns:PromotionActionParamResponseService" maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="promotionActionParamResponse" type="tns:PromotionActionParamResponse"></element>
+</schema>

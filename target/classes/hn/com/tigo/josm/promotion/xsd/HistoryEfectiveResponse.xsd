@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/HistoryEfectiveResponse"
+	xmlns:tns="http://www.example.org/HistoryEfectiveResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="HistoryEfectiveData">
+		<sequence>
+			<element name="transaction" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="executionDate" type="dateTime" maxOccurs="1"
+				minOccurs="1" />
+			<element name="totalCount" type="long" maxOccurs="1"
+				minOccurs="1" />
+			<element name="errorCount" type="long" maxOccurs="1"
+				minOccurs="1" />
+			<element name="percent" type="double" maxOccurs="1"
+				minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="HistoryEfectiveDetailResponseService">
+		<sequence>			
+			<element name="historyEfectiveDataVar" type="tns:HistoryEfectiveData"
+				maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="HistoryEfectiveResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="historyEfectiveDetailResponseServiceVar" type="tns:HistoryEfectiveDetailResponseService"
+						maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="historyEfectiveData" type="tns:HistoryEfectiveData" />
+
+	<element name="historyEfectiveDetailResponseService" type="tns:HistoryEfectiveDetailResponseService" />
+
+	<element name="historyEfectiveResponse" type="tns:HistoryEfectiveResponse" />
+
+</schema>

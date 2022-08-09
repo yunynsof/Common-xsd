@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://adapter.josm.tigo.com.hn/RequestType/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:rsc="http://tigo.com/enterprise/resources/parameters/simple/v1/schema"
+	xmlns:pref="http://tigo.com/enterprise/resources/parameters/simple/v1/schema">
+
+	<import schemaLocation="Parameters.xsd" namespace="http://tigo.com/enterprise/resources/parameters/simple/v1/schema"></import>
+	<complexType name="TaskResponseType">
+		<sequence>
+			<element name="_responseCode" type="int" minOccurs="1" maxOccurs="1">
+			</element>
+			<element name="_responseDescription" type="string" minOccurs="1" maxOccurs="1">
+			</element>
+			<element name="parameters" type="pref:parameter_array"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+</schema>

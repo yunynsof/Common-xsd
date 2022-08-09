@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ProxyUssdRequest/V1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	xmlns:tns="http://tigo.com.hn/ProxyUssdRequest/V1" elementFormDefault="qualified">
+
+	<element name="ussdrequest">
+		<complexType>
+			<sequence>
+				<element name="msisdn" type="string"></element>
+				<element name="transactionid" type="string"></element>
+				<element name="shortcode" type="string"></element>
+				<element name="stateflag" type="string"></element>
+				<element name="userinput" type="string"></element>
+				<element name="errorstatus" type="string"></element>
+				<element name="cellid" type="string"></element>
+				<element name="subscriberstate" type="string"></element>
+				
+				<element name="productId" type="long"></element>
+				<element name="orderType" type="string"></element>
+				<element name="quantity" type="int"></element>
+				<element name="proxyActionParameterArray" type="tns:proxyActionParameterArray" minOccurs="1" maxOccurs="1"></element> 
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="menuType">
+		<sequence>
+			<element name="menuItem" type="string" minOccurs="1" maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="proxyActionParameterArray">
+		<sequence>
+			<element name="proxyActionParameterList" type="tns:ProxyActionParameterType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ProxyActionParameterType">
+		<sequence>
+			<element name="name" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+			<element name="value" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+	
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings generateIsSetMethod="true">
+				<xjc:serializable uid="1" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+	
+
+</schema>

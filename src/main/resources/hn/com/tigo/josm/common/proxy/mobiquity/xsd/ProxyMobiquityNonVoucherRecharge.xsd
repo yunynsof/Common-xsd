@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/ProxyMobiquityNonVoucherRecharge/V1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	xmlns:tns="http://tigo.com.hn/ProxyMobiquityNonVoucherRecharge/V1"
+	elementFormDefault="qualified">
+
+	<element name="MobiquityNonVoucherRecharge">
+		<complexType>
+			<sequence>
+				<element name="subscriberId" type="string"></element>
+				<element name="identity" type="string"></element>
+				<element name="rechValue" type="string"></element>
+				<element name="rechDays" type="string"></element>
+				<element name="rechComm" type="string"></element>
+				<element name="orderType" type="string"></element>
+				<element name="productId" type="string"></element>
+				<element name="quantity" type="string"></element>
+				<element name="allOrNothing" type="boolean"></element>
+				<element name="ccwsUser" type="string"></element>
+				<element name="ccwsPassword" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+</schema>

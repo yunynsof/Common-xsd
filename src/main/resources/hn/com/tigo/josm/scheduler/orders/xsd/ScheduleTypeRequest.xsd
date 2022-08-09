@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/scheduler/orders/ScheduleTypeRequest/V1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://tigo.com.hn/scheduler/orders/ScheduleTypeRequest/V1"
+	elementFormDefault="qualified">
+
+  <xsd:complexType name="ScheduleTypeRequest">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/promotion/resetSubscriberPromotionRequest/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ap="http://tigo.com/josm/gateway/services/order/AdditionalParameterDTO/V1"
+	xmlns:tns="http://tigo.com.hn/promotion/resetSubscriberPromotionRequest/v1" elementFormDefault="qualified">
+	
+	<xsd:import schemaLocation="../../common/order/xsd/AdditionalParameterDTO.xsd" namespace="http://tigo.com/josm/gateway/services/order/AdditionalParameterDTO/V1"/>
+	
+	<xsd:element name="resetSubscriberPromotionRequest" type="tns:ResetSubscriberPromotionRequest" />
+	
+	<xsd:complexType name="ResetSubscriberPromotionRequest">
+		<xsd:sequence>
+			<xsd:element name="transactionId" type="string" minOccurs="1" nillable="false" />
+			<xsd:element name="promotionId" type="long" minOccurs="1" nillable="false" />
+			<xsd:element name="msisdn" type="int" minOccurs="1" nillable="false" />
+			<xsd:element name="eventGroupType" type="string" minOccurs="1" nillable="false" />
+			<xsd:element name="eventType" type="string" minOccurs="1" nillable="false" />
+			<xsd:element name="counter" type="int" minOccurs="1" nillable="false" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

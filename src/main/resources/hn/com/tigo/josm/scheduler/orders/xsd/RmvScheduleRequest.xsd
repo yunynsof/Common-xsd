@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/scheduler/orders/RmvScheduleRequest/V1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://tigo.com.hn/scheduler/orders/RmvScheduleRequest/V1"
+	elementFormDefault="qualified">
+
+  <xsd:complexType name="RmvScheduleRequest">
+    <xsd:sequence>
+      <xsd:element name="subscriberId" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="scheduleId" type="xsd:long" minOccurs="0"/>
+      <xsd:element name="scheduleType" type="xsd:long" minOccurs="0"/>
+      <xsd:element name="wipeOut" type="xsd:boolean" minOccurs="1"/>
+      <xsd:element name="taskId" type="xsd:long" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+

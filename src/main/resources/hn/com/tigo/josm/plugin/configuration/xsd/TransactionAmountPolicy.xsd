@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/policy/transaction/amount/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.tigo.com.hn/policy/transaction/amount/V1" xmlns:plc="http://tigo.com.hn/pluginconfiguration/V1">
+
+	<import schemaLocation="PluginConfiguration.xsd" namespace="http://tigo.com.hn/pluginconfiguration/V1" />
+
+	<element name="transactionAmount" type="tns:TransactionAmount" substitutionGroup="plc:configuration" />
+
+	<complexType name="TransactionAmount">
+		<complexContent>
+			<extension base="plc:ConfigurationType">
+				<sequence>
+					<element name="amountKey" type="string" minOccurs="1" maxOccurs="unbounded"/>
+					<element name="minimumAmount" type="double" minOccurs="0" maxOccurs="1"/>
+					<element name="maximumAmount" type="double" minOccurs="0" maxOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	
+	
+	
+</schema>

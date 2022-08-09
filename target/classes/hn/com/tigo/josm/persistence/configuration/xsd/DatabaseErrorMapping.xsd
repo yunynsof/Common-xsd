@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/persistence/DatabaseErrorMapping/v1"
+	xmlns:tns="http://tigo.com.hn/persistence/DatabaseErrorMapping/v1"
+	elementFormDefault="qualified">
+	
+	<element name="dataBaseErrorMap" type="tns:databaseErrorMap" nillable="false"/>
+	
+	<complexType name="databaseErrorMap">
+		<sequence>
+			<element name="timeout" type="int"/>
+			<element name="databaseErrorNode" type="tns:databaseError" maxOccurs="unbounded" minOccurs="0" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="databaseError">
+		<sequence>
+			<element name="errorCode" type="string"/>
+			<element name="errorMessage" type="string"/>
+		</sequence>
+	</complexType>
+	
+</schema>

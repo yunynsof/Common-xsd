@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/RequestJOSM" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tigo.com.hn/RequestJOSM">
+
+    <complexType name="RequestJOSM">
+    	<sequence>
+    		<element name="request" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

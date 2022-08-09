@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/policy/ipAclConfig/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.tigo.com.hn/policy/ipAclConfig/V1" 
+	xmlns:plc="http://tigo.com.hn/pluginconfiguration/V1">
+
+	<import schemaLocation="PluginConfiguration.xsd"
+		namespace="http://tigo.com.hn/pluginconfiguration/V1" />
+
+	<element name="ipAclConfig" type="tns:IpAclConfig"
+		substitutionGroup="plc:configuration" />
+
+	<complexType name="IpAclConfig">
+		<complexContent>
+			<extension base="plc:ConfigurationType">
+				<sequence>
+					<element name="cacheExpiration" type="int" minOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

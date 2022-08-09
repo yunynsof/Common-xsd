@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://tigo.com.hn/ProxyConfiguration/V1"
+	xmlns:tns="http://tigo.com.hn/ProxyConfiguration/V1"
+	elementFormDefault="qualified" >
+	
+	<element name="proxyConfigurationRequest">
+		<complexType>
+			<sequence>
+			    <element name="destination" type="string" minOccurs="1" maxOccurs="1"/>
+			    <element name="command" type="string" minOccurs="1" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

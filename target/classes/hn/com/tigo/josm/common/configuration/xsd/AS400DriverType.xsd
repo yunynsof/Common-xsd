@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/configuration/AS400DriverType/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:rsc="http://tigo.com/enterprise/resources/parameters/simple/v1/schema"
+	xmlns:tns2="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+
+	<complexType name="AS400DriverType">
+		<complexContent>
+			<extension base="tns2:DriverType">
+				<sequence>
+					<element name="queueName" type="string" minOccurs="1" />
+					<element name="queueSplit" type="string" minOccurs="1" />
+					<element name="queueDefinition" type="string" minOccurs="1" />
+					<element name="queueLibName" type="string" minOccurs="1" />
+					<element name="queueInputType" type="string" minOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

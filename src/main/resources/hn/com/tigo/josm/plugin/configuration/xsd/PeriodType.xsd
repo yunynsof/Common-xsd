@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/policy/type/period/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.tigo.com.hn/policy/type/period/V1">
+
+	
+	<element name="period" type="tns:PeriodType"/>
+	
+	<simpleType name="PeriodType">
+		<restriction base="string">
+			<enumeration value="HOUR"/>
+			<enumeration value="DAY"/>
+			<enumeration value="WEEK"/>
+			<enumeration value="MONTH"/>
+			<enumeration value="MILSECOND"/>
+		</restriction>
+	</simpleType>
+
+</schema>

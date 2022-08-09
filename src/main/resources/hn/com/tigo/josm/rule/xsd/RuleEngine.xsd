@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com/josm/rule/service/V1"
+	xmlns:tns="http://tigo.com/josm/rule/service/V1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	elementFormDefault="qualified">
+	
+	
+	<element name="ruleRequest" type="tns:RuleRequest"/>
+	<element name="ruleResponse" type="tns:RuleResponse"/>
+	<element name="ruleEngineException" type="tns:RuleEngineException" />
+	
+	<complexType name="RuleRequest">
+		<sequence>
+			<element name="session" type="string" minOccurs="1"/>
+			<element name="definition" type="string" minOccurs="1"/>
+			<element name="rulePackage" type="string" minOccurs="1"/>
+			<element name="ruleName" type="string" minOccurs="1"/>
+			<element name="input" type="tns:FactData" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+		</sequence>
+	</complexType>
+	
+	
+	<complexType name="RuleResponse">
+		<sequence>
+			<element name="code" type="int" minOccurs="1"/>
+			<element name="message" type="string" minOccurs="1"/>
+			<element name="output" type="tns:FactData" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+		</sequence>
+	</complexType>
+	
+	
+	
+	<complexType name="FactData">
+		<sequence>
+			<element name="name" type="string" minOccurs="1"/>
+			<element name="value" type="string" minOccurs="1"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="RuleEngineException">
+		<sequence>
+			<element name="error" type="int" />
+			<element name="description" type="string" />
+		</sequence>
+	</complexType>
+	
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings generateIsSetMethod="true">
+				<xjc:serializable uid="1" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+	
+
+	
+</schema>

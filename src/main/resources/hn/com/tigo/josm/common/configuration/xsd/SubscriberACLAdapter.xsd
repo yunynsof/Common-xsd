@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/SubscriberACLAdapterConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/SubscriberACLAdapterConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+	</import>
+	
+	<element name="SubscriberACLAdapterConfig" type="tns:SubscriberACLAdapterConfigType"
+	 substitutionGroup="tns1:AdapterConfig"/>
+
+	<complexType name="SubscriberACLAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType"></extension>
+		</complexContent>
+	</complexType>
+</schema>

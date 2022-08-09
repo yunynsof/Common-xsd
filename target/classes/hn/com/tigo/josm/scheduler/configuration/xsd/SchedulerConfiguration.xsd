@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/scheduler/configuration/V1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tigo.com.hn/scheduler/configuration/V1"
+	elementFormDefault="qualified">
+
+	<element name="schedulerConfiguration" type="tns:SchedulerConfiguration" />
+	<complexType name="SchedulerConfiguration">
+		<sequence>
+			<element name="minThread" type="int" minOccurs="1" />
+			<element name="maxThread" type="int" minOccurs="1" />
+			<element name="keepAlive" type="long" minOccurs="1" />
+			<element name="limitJobs" type="int" minOccurs="1" />
+			<element name="threadSleep" type="long" minOccurs="1" />
+			<element name="cacheExpiration" type="int" minOccurs="1" />
+			<element name="isLoggerEnable" type="boolean" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<element name="httpClientConfiguration" type="tns:HttpClientConfiguration" />
+	<complexType name="HttpClientConfiguration">
+		<sequence>
+			<element name="maxTotal" type="int" minOccurs="1" />
+			<element name="defaultMaxPerRoute" type="int" minOccurs="1" />
+			<element name="socketTimeout" type="int" minOccurs="1" />
+			<element name="connectTimeout" type="int" minOccurs="1" />
+			<element name="connectionRequestTimeout" type="int"
+				minOccurs="1" />
+		</sequence>
+	</complexType>
+
+</schema>

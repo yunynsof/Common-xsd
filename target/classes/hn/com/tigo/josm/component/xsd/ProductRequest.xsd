@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://tigo.com/josm/component/productRequest/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"	
+	xmlns:tns="http://tigo.com/josm/component/productRequest/v1"
+	elementFormDefault="qualified">
+  	
+	
+<xsd:element name="productRequest" type="tns:productRequest" nillable="true" />
+
+	
+
+<xsd:complexType name="productRequest">
+	<xsd:sequence>
+		<xsd:element name="idProduct" type="xsd:int" minOccurs="1" 	nillable="false" />	
+		<xsd:element name="nameProduct" type="xsd:string" minOccurs="1" nillable="false" />
+		<xsd:element name="descriptionProduct" type="xsd:string" minOccurs="1" nillable="false" />
+		<xsd:element name="idProductFamily" type="xsd:int" minOccurs="1" nillable="false" />
+	</xsd:sequence>
+</xsd:complexType>
+	
+</xsd:schema>

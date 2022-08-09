@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ProxyResponse/V1"
+	xmlns:tns="http://tigo.com.hn/ProxyResponse/V1" elementFormDefault="qualified">
+	
+	<complexType name="ProxyAs400ResponseType">
+		<sequence>
+			<element name="responseCode" type="string"></element>
+			<element name="responseDescription" type="string"></element>
+		</sequence>
+	</complexType>
+	
+</schema>

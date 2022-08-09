@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://tigo.com.hn/component/BpmVersionDraftResponse/V1"
+	xmlns:tns="http://tigo.com.hn/component/BpmVersionDraftResponse/V1"
+	xmlns:tns2="http://www.tigo.com.hn/order/JOSMResponse/V1"
+	xmlns:tns3="http://tigo.com.hn/component/pageElement/V1"
+	elementFormDefault="qualified">
+	
+	<import namespace="http://www.tigo.com.hn/order/JOSMResponse/V1" schemaLocation="JOSMResponse.xsd"/>
+	<import schemaLocation="pageElement.xsd"
+		namespace="http://tigo.com.hn/component/pageElement/V1"></import>	
+	
+	<element name="BpmVersionDraftDetail" type="tns:BpmVersionDraftDetail" />
+	<complexType name="BpmVersionDraftDetail" >		
+		<sequence>
+			<element name="bpmDraftId" type="long" minOccurs="1"/>
+			<element name="bpmId" type="string" minOccurs="1"/>			
+			<element name="bpmXml" type="string" minOccurs="1"/>
+			<element name="bpmEditType" type="string" minOccurs="1"/>
+			<element name="bpmName" type="string" minOccurs="1"/>			
+		</sequence>
+	</complexType>
+	
+	<element name="BpmVersionDraftDetailResponseService" type="tns:BpmVersionDraftDetailResponseService" />
+	<complexType name="BpmVersionDraftDetailResponseService">
+		<sequence>
+			<element name="BpmVersionDraftDetails" type="tns:BpmVersionDraftDetail" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	<element name="BpmVersionDraftResponse" type="tns:BpmVersionDraftResponse" />
+	<complexType name="BpmVersionDraftResponse">
+		<complexContent>
+			<extension base="tns2:JOSMResponse">
+				<sequence>
+					<element name="PageDetail" type="tns3:pageElement" minOccurs="1" maxOccurs="1" />
+					<element name="BpmVersionDraftList" type="tns:BpmVersionDraftDetailResponseService" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+</schema>

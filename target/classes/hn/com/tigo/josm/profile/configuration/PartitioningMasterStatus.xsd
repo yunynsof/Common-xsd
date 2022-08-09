@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/PartitioningMasterStatus"
+	xmlns:tns="http://www.example.org/PartitioningMasterStatus"
+	elementFormDefault="qualified">
+	
+	<element name="partitioningMasterStatus" type="tns:PartitioningMasterStatus" />
+	<complexType name="PartitioningMasterStatus">
+		<sequence>
+			<element name="timeOut" type="int" minOccurs="1" />
+			<element name="mod" type="int" minOccurs="1" />
+			<element name="jndiList" type="tns:ComplexJndi" minOccurs="0"  />
+		</sequence>
+	</complexType>
+	
+	<complexType name="ComplexJndi">
+		<sequence>
+			<element name="jndi" type="tns:Jndi" nillable="true"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="Jndi">
+		<sequence>
+			<element name="name" type="string" minOccurs="1" />
+			<element name="position" type="long" minOccurs="1" />
+		</sequence>
+	</complexType>
+	
+</schema>

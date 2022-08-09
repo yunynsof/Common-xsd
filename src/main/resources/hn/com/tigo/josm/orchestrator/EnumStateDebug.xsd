@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EnumStateDebug"
+	xmlns:tns="http://www.example.org/EnumStateDebug" elementFormDefault="qualified">
+
+	<simpleType name="EnumStateDebug">
+		<restriction base="string">
+			<enumeration value="Paused" />
+			<enumeration value="Stoped" />
+			<enumeration value="Running" />
+			<enumeration value="Started" />
+			<enumeration value="Unspecified" />
+			<enumeration value="Unspecified thread" />
+			<enumeration value="Successful action" />
+			<enumeration value="Error action" />
+			<enumeration value="End" />
+			<enumeration value="Debugger already on" />
+			<enumeration value="Debugger already off" />
+		</restriction>
+	</simpleType>
+
+</schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ProxyMobiquityCreditAccount/V1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	xmlns:tns="http://tigo.com.hn/ProxyMobiquityCreditAccount/V1"
+	elementFormDefault="qualified">
+
+	<element name="MobiquityCreditAccount">
+		<complexType>
+			<sequence>
+				<element name="subscriberID" type="string"></element>
+				<element name="balanceChnageComment" type="string"></element>
+				<element name="subCreditBalances" type="tns:subCreditBalances"></element>
+				<element name="orderType" type="string"></element>
+				<element name="productId" type="string"></element>
+				<element name="quantity" type="string"></element>
+				<element name="allOrNothing" type="boolean"></element>
+				<element name="ccwsUser" type="string"></element>
+				<element name="ccwsPassword" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="subCreditBalances">
+		<sequence>
+			<element name="BalanceCreditAccount" type="tns:BalanceCreditAccount" minOccurs="1"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="BalanceCreditAccount">
+		<sequence>
+			<element name="CreditValue" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+			<element name="BalanceName" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+			<element name="ExpirationDate" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+	
+<!-- 	<annotation> -->
+<!-- 		<appinfo> -->
+<!-- 			<jaxb:globalBindings generateIsSetMethod="true"> -->
+<!-- 				<xjc:serializable uid="1" /> -->
+<!-- 			</jaxb:globalBindings> -->
+<!-- 		</appinfo> -->
+<!-- 	</annotation> -->
+
+
+</schema>

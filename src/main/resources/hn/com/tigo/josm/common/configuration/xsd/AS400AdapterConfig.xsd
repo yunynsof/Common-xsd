@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/AS400AdapterConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/AS400AdapterConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified"
+	xmlns:pref="http://www.tigo.com.hn/configuration/AS400DriverType/V1" xmlns:pref1="http://tigo.com.hn/adapter/AS400ProgramConfigType/V1">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+
+	<import schemaLocation="AS400DriverType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AS400DriverType/V1" />
+
+	<import schemaLocation="AS400ProgramConfigType.xsd" namespace="http://tigo.com.hn/adapter/AS400ProgramConfigType/V1"></import>
+	<element name="AS400AdapterConfig" type="tns:AS400AdapterConfigType"
+		substitutionGroup="tns1:AdapterConfig" />
+
+	<complexType name="AS400AdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="AS400DriverConfig" type="pref:AS400DriverType" minOccurs="1" maxOccurs="unbounded" />
+					<element name="AS400ProgramConfig" type="pref1:AS400AdapterProgramType" minOccurs="1" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

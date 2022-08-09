@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/component/DataTransferResponse/V1"
+	xmlns:tns="http://tigo.com.hn/component/DataTransferResponse/V1"		
+	elementFormDefault="qualified" 
+	xmlns:pref="http://www.tigo.com.hn/order/JOSMResponse/V1"	>
+	
+	
+	<import schemaLocation="JOSMResponse.xsd"
+		namespace="http://www.tigo.com.hn/order/JOSMResponse/V1"></import>	
+	
+	
+
+	<element name="DataTransferDetail" type="tns:DataTransferDetail" />
+	<complexType name="DataTransferDetail" >	
+		<sequence>
+			<element name="idDataTransfer" type="long" minOccurs="1" 	nillable="false" />				
+			<element name="idProduct" type="long" minOccurs="1" nillable="false" />
+			<element name="orderType" type="string" minOccurs="1" nillable="false" />
+			<element name="state" type="string" minOccurs="1" nillable="false" />
+			<element name="jasonValue" type="string" minOccurs="1" nillable="true"/>
+			<element name="jasonValueBackUp" type="string" minOccurs="1" nillable="true"/>
+			<element name="maxValidRestoreDate" type="dateTime" minOccurs="1" nillable="true" />		
+		</sequence>
+	</complexType>
+
+	
+	<element name="DataTransferResponseService" type="tns:DataTransferResponseService" />
+	<complexType name="DataTransferResponseService">
+		<sequence>
+			<element name="dataTransferDetails" type="tns:DataTransferDetail" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+
+
+	<element name="DataTransferResponse" type="tns:DataTransferResponse"
+			substitutionGroup="pref:JOSMResponse" />
+	<complexType name="DataTransferResponse">
+		<complexContent>
+			<extension base="pref:JOSMResponse">
+				<sequence>											
+					<element name="dataTransfers" type="tns:DataTransferResponseService" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+
+</schema>

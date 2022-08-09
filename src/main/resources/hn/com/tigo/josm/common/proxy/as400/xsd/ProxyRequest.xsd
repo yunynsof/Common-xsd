@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/ProxyRequest/V1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	xmlns:tns="http://tigo.com.hn/ProxyRequest/V1" xmlns:sat="http://tigo.com.hn/ProxyServices/V1"
+	xmlns:pac="http://tigo.com.hn/ProxyActions/V1" elementFormDefault="qualified">
+
+	<import schemaLocation="ProxyServices.xsd" namespace="http://tigo.com.hn/ProxyServices/V1"></import>
+	<import schemaLocation="ProxyActions.xsd" namespace="http://tigo.com.hn/ProxyActions/V1"></import>
+
+	<element name="ProxyAs400RequestType">
+		<complexType>
+			<sequence>
+				<element name="productCode" type="string"></element>
+				<element name="orderType" type="string"></element>
+				<element name="transactionId" type="string"></element>
+				<element name="priority" type="string"></element>
+				<element name="applicationKeys" type="tns:Keys"></element>
+				<element name="serviceRequest" type="tns:ServiceRequest"></element>
+				<element name="actionRequest" type="pac:proxyActionArray"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="Keys">
+		<sequence>
+			<element name="imsi" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="msisdn" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="new_imsi" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+			<element name="new_msisdn" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ServiceRequest">
+		<sequence>
+			<element name="operation" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+			<element name="keys" type="tns:Keys" minOccurs="1" maxOccurs="1"></element>
+			<element name="services" type="tns:Services" minOccurs="1"
+				maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Services">
+		<sequence>
+			<element name="gsmsub" type="tns:Keys" minOccurs="1"
+				maxOccurs="1"></element>
+			<element name="serviceActions" type="sat:proxyServiceArray"
+				minOccurs="1" maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings generateIsSetMethod="true">
+				<xjc:serializable uid="1" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+
+</schema>

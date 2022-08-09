@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/configuration/KannelDriverType/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:rsc="http://tigo.com/enterprise/resources/parameters/simple/v1/schema"
+	xmlns:tns2="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+
+	<complexType name="KannelDriverType">
+		<complexContent>
+			<extension base="tns2:DriverType">
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/profile/SubscriberResponse/V1"
+	xmlns:tns="http://tigo.com.hn/profile/SubscriberResponse/V1" 
+	elementFormDefault="qualified" 
+	xmlns:msr="http://www.tigo.com.hn/profile/MasterStatusResponse/V1">
+
+    <import schemaLocation="MasterStatusResponse.xsd" namespace="http://www.tigo.com.hn/profile/MasterStatusResponse/V1"></import>
+  
+
+	<element name="subscriptionDetail" type="tns:SubscriptionDetail" />
+	<complexType name="SubscriptionDetail">
+		<sequence>
+			<element name="effectiveDay" type="date" minOccurs="1" />
+			<element name="expireDate" type="date" minOccurs="1" />
+			<element name="lastExecuteDate" type="date" minOccurs="1" />
+			<element name="status" type="string" minOccurs="1" />
+			<element name="productId" type="long" minOccurs="1" />
+			<element name="product" type="string" minOccurs="1" />
+			<element name="rentalPeriod" type="string" minOccurs="1" />
+			<element name="subscriber" type="string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<element name="subscriptionResponse" type="tns:SubscriptionResponse"
+		substitutionGroup="msr:masterStatusResponse" />
+	<complexType name="SubscriptionResponse">
+		<complexContent>
+			<extension base="msr:MasterStatusResponse">
+				<sequence>
+					<element name="subscriptionDetail" type="tns:SubscriptionDetail"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

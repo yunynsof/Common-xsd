@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/configuration/HssAdapterConfigType/V1"
+	xmlns:tns="http://www.tigo.com.hn/configuration/HssAdapterConfigType/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+
+	<element name="HssAdapterConfig" type="tns:HssAdapterConfigType" substitutionGroup="tns1:AdapterConfig"/>
+	<complexType name="HssAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="hlrsn" type="int" minOccurs="1" />
+					<element name="sessionCheckTime" type="int" minOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

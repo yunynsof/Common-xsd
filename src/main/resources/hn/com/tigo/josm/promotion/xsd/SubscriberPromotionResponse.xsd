@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/SubscriberPromotionResponse"
+	xmlns:tns="http://www.example.org/SubscriberPromotionResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="SubscriberPromotionDetails">
+		<sequence>
+			<element name="idSubscriberPromotion" type="long" maxOccurs="1" minOccurs="1"/>
+			<element name = "msisdn" type="long" minOccurs="1" maxOccurs="1" />
+			<element name = "state" type="long" minOccurs="1" maxOccurs="1" />
+			<element name = "idPromotion" type="long" minOccurs="1" maxOccurs="1" />
+			<element name = "giftCounter" type="long" minOccurs="1" maxOccurs="1" />
+ 			<element name = "createDate" type="dateTime" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="SubscriberPromotionDetailResponseService">
+		<sequence>
+			<element name="SubscriberPromotionDetails" type="tns:SubscriberPromotionDetails" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="SubscriberPromotionResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="SubscriberPromotionList" type="tns:SubscriberPromotionDetailResponseService" maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="SubscriberPromotionDetail" type="tns:SubscriberPromotionDetails"></element>
+
+	<element name="SubscriberPromotionDetailResponseService"
+		type="tns:SubscriberPromotionDetailResponseService">
+	</element>
+
+	<element name="SubscriberPromotionResponse" type="tns:SubscriberPromotionResponse"></element>
+</schema>

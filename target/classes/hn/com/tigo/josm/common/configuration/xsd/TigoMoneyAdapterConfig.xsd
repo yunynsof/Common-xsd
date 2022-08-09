@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://tigo.com.hn/TigoMoneyAdapterConfig/V1"
+	xmlns:tns="http://tigo.com.hn/TigoMoneyAdapterConfig/V1" 
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+	<import namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+		schemaLocation="AdapterConfigType.xsd" />
+
+	<element name="TigoMoneyAdapterConfig" type="tns:TigoMoneyAdapterConfigType"
+		substitutionGroup="tns1:AdapterConfig" />
+
+	<complexType name="TigoMoneyAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="dataSource" type="string" maxOccurs="1" minOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

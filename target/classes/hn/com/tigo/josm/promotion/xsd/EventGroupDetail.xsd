@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/EventGroupDetail"
+	xmlns:tns="http://www.example.org/EventGroupDetail"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="EventDto">
+		<sequence>
+			<element name="idEvent" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idEventGroup" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="idEventGroupDetail" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="threshold" type="long" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="nameEvent" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="eventDescription" type="string" maxOccurs="1" minOccurs="1" />
+			<element name="eventGroupName" type="string" maxOccurs="1" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="EventDtoService">
+		<sequence>
+			<element name="eventGroupDetailDetails" type="tns:EventDto" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EventGroupDetailResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="eventDtoList" type="tns:EventDtoService" maxOccurs="1" minOccurs="1"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+
+	<element name="eventGroupDetailDetail"
+		type="tns:EventDto">
+	</element>
+
+	<element name="eventGroupDetailDetailResponseService"
+		type="tns:EventDtoService">
+	</element>
+
+	<element name="eventGroupDetailResponse"
+		type="tns:EventGroupDetailResponse">
+	</element>
+</schema>

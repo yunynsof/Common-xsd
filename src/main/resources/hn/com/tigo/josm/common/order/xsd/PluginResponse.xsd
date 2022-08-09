@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://tigo.com.hn/PluginResponse"
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://tigo.com.hn/PluginResponse" elementFormDefault="qualified"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" 
+	jaxb:version="1.0" >
+  	
+  	<element name="pluginResponse" type="tns:PluginResponse" />
+
+    <complexType name="PluginResponse">
+    	<sequence>
+    		<element name="code" type="int"></element>
+    		<element name="result" type="boolean"></element>
+    		<element name="message" type="string"></element>
+    		<element name="messageDetail" type="string"></element>
+    	</sequence>
+    </complexType>
+
+	<annotation>
+		<appinfo>
+				<xjc:serializable uid="1" />
+		</appinfo>
+	</annotation>
+	
+</schema>

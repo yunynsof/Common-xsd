@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/SubscriberACLPolicyConfig/V1"
+	xmlns:tns="http://tigo.com.hn/SubscriberACLPolicyConfig/V1" xmlns:plc="http://tigo.com.hn/pluginconfiguration/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="PluginConfiguration.xsd"
+		namespace="http://tigo.com.hn/pluginconfiguration/V1" />
+
+
+	<element name="subscriberACLPolicyConfig" type="tns:SubscriberACLPolicyConfig"
+		substitutionGroup="plc:configuration" />
+
+
+
+	<complexType name="SubscriberACLPolicyConfig">
+		<complexContent>
+			<extension base="plc:ConfigurationType">
+				<sequence>
+					<element name="subscribersArray" type="tns:SubscriberArray"
+						minOccurs="1" maxOccurs="1" />
+					<element name="listType" type="tns:ListTypeEnum" minOccurs="1"
+						maxOccurs="1" nillable="false" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="SubscriberArray">
+		<sequence>
+			<element name="subscribers" minOccurs="1" type="tns:SubscriberNumber"
+				maxOccurs="unbounded" nillable="false" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="ListTypeEnum">
+		<restriction base="string">
+			<enumeration value="W" />
+			<enumeration value="B" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="SubscriberNumber">
+		<restriction base="string">
+			<pattern value="9[0-9]{7}" />
+		</restriction>
+	</simpleType>
+
+</schema>

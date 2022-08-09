@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/CounterEventResponse"
+	xmlns:tns="http://www.example.org/CounterEventResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="CounterEventDetail">
+		<sequence>
+			<element name="idCounterEvent" type="long" maxOccurs="1" minOccurs="1"></element>
+			<element name="idEventGroup" type="long" maxOccurs="1" minOccurs="1"></element>
+			<element name="idPromotion" type="long" maxOccurs="1" minOccurs="1"></element>
+			<element name="idSubscriber" type="long" maxOccurs="1" minOccurs="1"></element>
+			<element name="promotion" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="eventGroup" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="event" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="eventDescription" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="threshold" type="int" maxOccurs="1" minOccurs="1"></element>
+			<element name="counter" type="int" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="CounterEventResponseService">
+		<sequence>
+			<element name="counterEvent"
+				type="tns:CounterEventDetail" maxOccurs="unbounded" minOccurs="0">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="CounterEventResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="CounterEventList" type="tns:CounterEventResponseService" maxOccurs="1" minOccurs="1"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="counterEventDetail" type="tns:CounterEventDetail"></element>
+
+	<element name="counterEventResponse"
+		type="tns:CounterEventResponse">
+	</element>
+
+	<element name="counterEventResponseService"
+		type="tns:CounterEventResponseService">
+	</element>
+</schema>

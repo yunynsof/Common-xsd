@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://tigo.com.hn/gatewayConfig/V1"
+	elementFormDefault="qualified" 
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://tigo.com.hn/gatewayConfig/V1">
+
+	<complexType name="GatewayConfig">
+		<sequence>
+    		<element name="cacheParametersTime" type="int" minOccurs="1" maxOccurs="1"/>
+    	</sequence>
+	</complexType>
+</schema>

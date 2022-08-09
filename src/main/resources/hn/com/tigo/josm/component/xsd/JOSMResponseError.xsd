@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/JOSMResponseError"
+	xmlns:tns="http://www.example.org/JOSMResponseError"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/order/JOSMResponse/V1">
+
+	<import schemaLocation="JOSMResponse.xsd"
+		namespace="http://www.tigo.com.hn/order/JOSMResponse/V1"></import>
+
+
+	<element name="JOSMResponseError" type="tns:JOSMResponseError"
+		substitutionGroup="pref:JOSMResponse" />
+	<complexType name="JOSMResponseError">
+		<complexContent>
+			<extension base="pref:JOSMResponse">
+				<sequence>
+					<element name="code" type="int" minOccurs="1" />
+					<element name="message" type="string" minOccurs="1" />
+					<element name="messageDetail" type="string" minOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/SprAdapterConfig/V1"
+	xmlns:tns="http://tigo.com.hn/SprAdapterConfig/V1" xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+
+	<element name="SprAdapterConfig" type="tns:SprAdapterConfigType"
+		substitutionGroup="tns1:AdapterConfig" />
+
+	<complexType name="SprAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+<!-- 					<element name="driverRequestTimeOut" type="int" minOccurs="1" -->
+<!-- 						maxOccurs="1" /> -->
+<!-- 					<element name="driverConnectTimeOut" type="int" minOccurs="1" -->
+<!-- 						maxOccurs="1" /> -->
+					<element name="dataSource" type="string" minOccurs="1"
+						maxOccurs="1" />
+					<element name="connectionType" type="string" minOccurs="1"
+						maxOccurs="1" />
+					<element name="restUrl" type="string" minOccurs="1"
+						maxOccurs="1" />
+					<element name="fields" type="string" minOccurs="1"
+						maxOccurs="1" />
+					<element name="errorCodes" type="string" minOccurs="1"
+						maxOccurs="unbounded" />
+					<element name="sprSubscriberType" type="tns:SprSubscriberType"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="sprSubscriberType" type="tns:SprSubscriberType"
+		nillable="true" />
+	<complexType name="SprSubscriberType">
+		<sequence>
+			<element name="sprSubscriberType" type="string" minOccurs="1"
+				maxOccurs="1" nillable="false" />
+			<element name="sprSubscriberTypeFields" type="tns:SprSubscriberTypeFields"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<element name="sprSubscriberTypeFields" type="tns:SprSubscriberTypeFields"
+		nillable="true" />
+	<complexType name="SprSubscriberTypeFields">
+		<sequence>
+			<element name="planCodeType" type="string" minOccurs="1"
+				maxOccurs="1" nillable="false" />
+			<element name="prefix" type="string" minOccurs="1"
+				maxOccurs="1" nillable="false" />
+			<element name="entitlement" type="string" minOccurs="1"
+				maxOccurs="1" nillable="false" />
+			<element name="fechaInicio" type="string" minOccurs="1"
+				maxOccurs="1" nillable="false" />
+			<element name="fechaFin" type="string" minOccurs="1"
+				maxOccurs="1" nillable="false" />
+		</sequence>
+	</complexType>
+
+</schema>

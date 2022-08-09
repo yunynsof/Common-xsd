@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://tigo.com.hn/pluginConfigurationProperties/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://tigo.com.hn/pluginConfigurationProperties/V1">
+
+	<element name="PluginConfigurationType">
+		<complexType>
+			<sequence>
+				<element name="delayCache" type="string" minOccurs="1"
+					maxOccurs="1" />
+				<element name="policyXsdArray" type="tns:PolicyXsdArray"
+					minOccurs="1" maxOccurs="1" nillable="false" />
+			</sequence>
+		</complexType>
+	</element>
+
+
+	<complexType name="PolicyXsdArray">
+		<sequence>
+			<element name="xsdNameList" minOccurs="1" type="string"
+				maxOccurs="unbounded" nillable="false" />
+		</sequence>
+	</complexType>
+</schema>

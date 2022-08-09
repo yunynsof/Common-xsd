@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/component/DataTransferCheckResponse/V1"
+	xmlns:tns="http://tigo.com.hn/component/DataTransferCheckResponse/V1"			
+	elementFormDefault="qualified" 
+	xmlns:pref="http://www.tigo.com.hn/order/JOSMResponse/V1"	>
+	
+	
+	<import schemaLocation="JOSMResponse.xsd"
+		namespace="http://www.tigo.com.hn/order/JOSMResponse/V1"></import>	
+		
+	
+
+
+	<element name="dataTransferCheckDetail" type="tns:dataTransferCheckDetail" />
+	<complexType name="dataTransferCheckDetail" >	
+		<sequence>
+			<element name="module" type="string" minOccurs="1" 	nillable="false" />	
+			<element name="idModule" type="string" minOccurs="1" nillable="false" />
+			<element name="operationType" type="string" minOccurs="1" nillable="false" />			
+		</sequence>
+	</complexType>
+	
+	<element name="dataTransferCheckList" type="tns:dataTransferCheckList" />
+	<complexType name="dataTransferCheckList">
+		<sequence>
+			<element name="ModuleDetails" type="tns:dataTransferCheckDetail" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	 <element name="DataTransferCheckResponse" type="tns:DataTransferCheckResponse"
+			substitutionGroup="pref:JOSMResponse" />
+	<complexType name="DataTransferCheckResponse">
+		<complexContent>
+			<extension base="pref:JOSMResponse">
+				<sequence>															
+					<element name="CheckedModules" type="tns:dataTransferCheckList" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

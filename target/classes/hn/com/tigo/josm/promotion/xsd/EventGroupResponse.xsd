@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/EventGroupResponse"
+	xmlns:tns="http://www.example.org/EventGroupResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+
+	<import schemaLocation="PromotionResponse.xsd" namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="DetailEventGroup">
+		<sequence>
+			<element name="idEventGroup" type="long" maxOccurs="1" minOccurs="1"></element>
+			<element name="name" type="string" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EventGroupResponseService">
+		<sequence>
+			<element name="eventGroupDetails" type="tns:DetailEventGroup" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="EventGroupResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="eventGroupList" type="tns:EventGroupResponseService" maxOccurs="1" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="eventGroupDetail" type="tns:DetailEventGroup"></element>
+
+	<element name="eventGroupDetailResponseService"
+		type="tns:EventGroupResponseService">
+	</element>
+
+	<element name="eventGroupResponse" type="tns:EventGroupResponse"></element>
+</schema>

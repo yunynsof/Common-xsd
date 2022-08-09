@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tigo.com.hn/policy/productincompatibility/V1"
+	xmlns:tns="http://www.tigo.com.hn/policy/productincompatibility/V1"
+	xmlns:plc="http://tigo.com.hn/pluginconfiguration/V1"
+	elementFormDefault="qualified">
+	
+	<import schemaLocation="PluginConfiguration.xsd" namespace="http://tigo.com.hn/pluginconfiguration/V1" />
+	
+	<element name="productIncompatibility" type="tns:ProductIncompatibility" substitutionGroup="plc:configuration" />
+
+	<complexType name="ProductIncompatibility" >
+		<complexContent>
+			<extension base="plc:ConfigurationType">
+				<sequence>
+					<element name="selfIncompatibility" type="boolean" minOccurs="1" maxOccurs="1" nillable="false" />
+					<element name="targetProduct" type="long" minOccurs="1" maxOccurs="unbounded" nillable="false" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+
+	
+</schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/policy/master/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.tigo.com.hn/policy/master/V1" xmlns:plc="http://tigo.com.hn/pluginconfiguration/V1">
+
+	<import schemaLocation="PluginConfiguration.xsd" namespace="http://tigo.com.hn/pluginconfiguration/V1" />
+	
+	<element name="allowedMaster" type="tns:AllowedMaster" substitutionGroup="plc:configuration" />
+
+	<complexType name="AllowedMaster">
+		<complexContent>
+			<extension base="plc:ConfigurationType">
+				<sequence>
+					<element name="error" type="int" minOccurs="0" maxOccurs="1" />
+					<element name="profile" type="string" minOccurs="1"	maxOccurs="1" />
+					<element name="attribute" type="string" minOccurs="1" maxOccurs="1" />
+					<element name="value" type="string" minOccurs="1" maxOccurs="unbounded" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	
+
+</schema>

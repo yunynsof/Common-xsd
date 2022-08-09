@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/pluginconfiguration/V1"
+	xmlns:tns="http://tigo.com.hn/pluginconfiguration/V1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	elementFormDefault="qualified">
+	
+	<element name="pluginConfigurationResponse">
+		<complexType>
+			<sequence>
+				<element ref="tns:configuration"  minOccurs="1" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="configurationType" type="string" use="required"/>
+		</complexType>
+	</element>
+	
+	<element name="configuration" type="tns:ConfigurationType"/>
+	
+	<complexType name="ConfigurationType">
+		<attribute name="instanceId" type="string"  use="required"/>
+	</complexType>
+
+
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings generateIsSetMethod="true">
+				<xjc:serializable uid="1" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+</schema>

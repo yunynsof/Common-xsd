@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/component/messageBundlePageResponse/V1"
+	xmlns:tns="http://tigo.com.hn/component/messageBundlePageResponse/V1"		
+	elementFormDefault="qualified" 
+	xmlns:pref="http://www.tigo.com.hn/order/JOSMResponse/V1"	>
+	
+	
+	<import schemaLocation="JOSMResponse.xsd"
+		namespace="http://www.tigo.com.hn/order/JOSMResponse/V1"></import>
+
+	<element name="messageBundleDetail" type="tns:messageBundleDetail" />
+	<complexType name="messageBundleDetail" >	
+		<sequence>
+			<element name="idMessage" type="long" minOccurs="1" 	nillable="false" />				
+			<element name="messageText" type="string" minOccurs="1" nillable="false" />
+			<element name="messageFrom" type="string" minOccurs="1" nillable="false" />			
+		</sequence>
+	</complexType>
+
+	
+	<element name="messageBundleDetailResponseService" type="tns:messageBundleDetailResponseService" />
+	<complexType name="messageBundleDetailResponseService">
+		<sequence>
+			<element name="messageBundleDetails" type="tns:messageBundleDetail" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+
+
+	<element name="messageBundlePageResponse" type="tns:messageBundlePageResponse"
+			substitutionGroup="pref:JOSMResponse" />
+	<complexType name="messageBundlePageResponse">
+		<complexContent>
+			<extension base="pref:JOSMResponse">
+				<sequence>											
+					<element name="messageBundles" type="tns:messageBundleDetailResponseService" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+
+</schema>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	>
+
+	<element name="AdapterConfig" type="tns:AdapterConfigType"/>
+
+	<complexType name="AdapterConfigType">
+		<sequence>
+			<element name="DriverConfig" type="tns:DriverType"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<element name="MaitenanceConfig" type="tns:MaintenanceType"
+				minOccurs="0">
+			</element>
+			<element name="requestTimeOut" type="int" minOccurs="1" maxOccurs="1"/>
+			<element name="MaxThroughput" type="int" minOccurs="1" />
+			<element name="DriverPoolSize" type="int" minOccurs="1"  />
+			<element name="TaskMockDelayList" type="tns:TaskMockDelayListType" minOccurs="0" />
+		</sequence>
+	</complexType>
+ 
+	<complexType name="MaintenanceType">
+		<sequence>
+			<element name="time" type="int" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+    <complexType name="DriverType">
+    	<sequence>
+			<element name="endPoint" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="user" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="password" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="request_timeOut" type="int" minOccurs="1" maxOccurs="1"></element>
+			<element name="conect_timeOut" type="int" minOccurs="1" maxOccurs="1"></element>
+		</sequence>
+    </complexType>
+    
+    <complexType name="TaskMockDelayListType">
+    	<sequence>
+			<element name="taskList" type="tns:TaskMockDelayType" minOccurs="1" maxOccurs="unbounded"></element>
+		</sequence>
+    </complexType>
+    
+    <complexType name="TaskMockDelayType">
+    	<sequence>
+			<element name="taskName" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="taskDelay" type="long" minOccurs="1" maxOccurs="1"></element>
+		</sequence>
+    </complexType>
+    
+</schema>

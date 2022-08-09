@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/ExchangeAS400AdapterConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/ExchangeAS400AdapterConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	xmlns:tns2="http://www.tigo.com.hn/configuration/AS400DriverType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+	<import schemaLocation="AS400DriverType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AS400DriverType/V1" />
+
+	<element name="ExchangeAS400AdapterConfig" type="tns:ExchangeAS400AdapterConfigType"
+		substitutionGroup="tns1:AdapterConfig" />
+	<complexType name="ExchangeAS400AdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="AS400DriverConfig" type="tns2:AS400DriverType"
+						minOccurs="1" maxOccurs="unbounded" />
+				</sequence>
+			</extension>
+		</complexContent>
+
+	</complexType>
+</schema>

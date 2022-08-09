@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PromotionMetricsQuantityPurchasesResponse"
+	xmlns:tns="http://www.example.org/PromotionMetricsQuantityPurchasesResponse"
+	elementFormDefault="qualified" xmlns:pref="http://www.tigo.com.hn/PromotionResponse">
+
+	<import schemaLocation="PromotionResponse.xsd"
+		namespace="http://www.tigo.com.hn/PromotionResponse"></import>
+
+	<complexType name="QuantityPurchasesType">
+		<sequence>
+			<element name="eventName" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="productPurchases" type="long" maxOccurs="1"
+				minOccurs="1" />
+			<element name="productDescription" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="totalSubscribers" type="long" maxOccurs="1"
+				minOccurs="1" />
+			<element name="percent" type="double" maxOccurs="1"
+				minOccurs="1" />
+			<element name="executionDate" type="dateTime" maxOccurs="1"
+				minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="QuantityPurchasesDetailResponseService">
+		<sequence>
+			<element name="transaction" type="string" maxOccurs="1"
+				minOccurs="1" />
+			<element name="quantityPurchase" type="tns:QuantityPurchasesType"
+				maxOccurs="unbounded" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="QuantityPurchasesResponseService">
+		<sequence>
+			<element name="quantityPurchaseDetail" type="tns:QuantityPurchasesDetailResponseService"
+				maxOccurs="unbounded" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="QuantityPurchasesResponse">
+		<complexContent>
+			<extension base="pref:PromotionResponse">
+				<sequence>
+					<element name="quantityPurchaseList" type="tns:QuantityPurchasesResponseService"
+						maxOccurs="1" minOccurs="1" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="quantityPurchasesType" type="tns:QuantityPurchasesType" />
+	<element name="quantityPurchasesDetailResponseService" type="tns:QuantityPurchasesDetailResponseService" />
+	<element name="quantityPurchasesResponseService" type="tns:QuantityPurchasesResponseService" />
+	<element name="quantityPurchasesResponse" type="tns:QuantityPurchasesResponse" />
+
+</schema>

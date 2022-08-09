@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/FulfillmentProxyConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/FulfillmentProxyConfigType/V1"
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+
+	<element name="FulfillmentProxyConfig" type="tns:FulfillmentProxyConfigType" substitutionGroup="tns1:AdapterConfig"/>
+	<complexType name="FulfillmentProxyConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="productList" type="tns:ProductsType" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="ProductsType">
+		<sequence>
+			<element name="product" type="tns:ProductListType" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ProductListType">
+		<sequence>
+			<element name="id" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="parameterList" type="tns:ParametersType" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ParametersType">
+		<sequence>
+			<element name="parameter" type="tns:ParameterListType" maxOccurs="unbounded" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ParameterListType">
+		<sequence>
+			<element name="token" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="value" type="string" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+</schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/profile/SubscriberResponse/V1"
+	xmlns:tns="http://tigo.com.hn/profile/SubscriberResponse/V1"
+	xmlns:msr="http://www.tigo.com.hn/profile/MasterStatusResponse/V1"
+	elementFormDefault="qualified">
+	
+	<import schemaLocation="MasterStatusResponse.xsd" namespace="http://www.tigo.com.hn/profile/MasterStatusResponse/V1"></import>
+
+
+	<element name="subscriberResponse" type="tns:SubscriberResponse"
+		substitutionGroup="msr:masterStatusResponse" />
+	<complexType name="SubscriberResponse">
+		<complexContent>
+			<extension base="msr:MasterStatusResponse">
+				<sequence>
+					<element name="idSubscriber" type="long" minOccurs="1" nillable="false" />
+					<element name="dateCreated" type="date" minOccurs="1" nillable="false" />
+					<element name="activated" type="string" minOccurs="1" nillable="false" />
+					<element name="subscriberNumber" type="string" minOccurs="1" nillable="false" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	<element name="SubscriberResponseService" type="tns:SubscriberResponseService"
+		substitutionGroup="msr:masterStatusResponse" />
+	<complexType name="SubscriberResponseService">
+		<complexContent>
+		<extension base="msr:MasterStatusResponse">
+				<sequence>
+					<element ref="tns:subscriberResponse" minOccurs="1" maxOccurs="unbounded" />
+				</sequence>
+		</extension>
+		</complexContent>
+	</complexType>	
+
+</schema>

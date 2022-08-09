@@ -1,0 +1,16 @@
+<?xml version="1.0"?> <xsd:schema
+ targetNamespace="http://tigo.com/bpm/sample/dataobject/V1"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:tns="http://tigo.com/bpm/sample/dataobject/V1">
+ 	<xsd:simpleType name="BpmnEnumType">
+ 		<xsd:restriction base="xsd:string">
+ 			<xsd:enumeration value="inputData" />
+ 			<xsd:enumeration value="orderRequestDetail" />
+ 			<xsd:enumeration value="simpleOrderRequest" />
+ 			<xsd:enumeration value="agentRequest" />
+ 			<xsd:enumeration value="agentResponse" />
+ 			<xsd:enumeration value="componentes" />
+ 			<xsd:enumeration value="printer" />
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ </xsd:schema>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/profile/SubscriberProfileResponse/V1"
+	xmlns:tns="http://tigo.com.hn/profile/SubscriberProfileResponse/V1"
+	xmlns:msr="http://www.tigo.com.hn/profile/MasterStatusResponse/V1"
+	elementFormDefault="qualified">
+		
+	<import schemaLocation="MasterStatusResponse.xsd" 
+	namespace="http://www.tigo.com.hn/profile/MasterStatusResponse/V1"></import>
+
+	<element name="subscriberProfileDetail" type="tns:SubscriberProfileDetail" />
+	<complexType name="SubscriberProfileDetail">
+		<sequence>			
+			<element name="subscriber" type="string" minOccurs="1" />
+			<element name="profileId" type="int" minOccurs="1" />
+			<element name="attributes" type="tns:AttributesResponse"
+				minOccurs="0" />
+			<element name="transactionResponse" type="tns:TransactionsResponse"
+				minOccurs="0" />		
+		</sequence>
+	</complexType>
+	
+	
+	
+	<element name="transactionsResponse" type="tns:TransactionsResponse"
+		nillable="true" />
+	<complexType name="TransactionsResponse">
+		<sequence>
+			<element name="transactionResponse" type="tns:TransactionResponse"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="TransactionResponse">
+		<sequence>
+			<element name="transactionId" type="string" minOccurs="1" nillable="false" />		
+			<element name="attributes" type="tns:AttributesResponse" minOccurs="0" />
+		</sequence>
+	</complexType>	
+
+	<element name="subscriberProfileResponse" type="tns:SubscriberProfileResponse"
+		substitutionGroup="msr:masterStatusResponse" />
+	<complexType name="SubscriberProfileResponse">
+		<complexContent>
+			<extension base="msr:MasterStatusResponse">
+				<sequence>
+					<element ref="tns:subscriberProfileDetail" minOccurs="1"
+						maxOccurs="unbounded" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="attributes" type="tns:Attributes" nillable="true" />
+	<complexType name="Attributes">
+		<sequence>
+			<element name="attribute" type="tns:Attribute" nillable="true"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Attribute">
+		<sequence>
+			<element name="attributeId" type="long" minOccurs="1" nillable="false" />
+			<element name="value" type="string" minOccurs="1" nillable="false" />
+			<element name="comment" type="string" minOccurs="1" nillable="false" />
+		</sequence>
+	</complexType>
+
+	<element name="attributesResponse" type="tns:AttributesResponse"
+		nillable="true" />
+	<complexType name="AttributesResponse">
+		<sequence>
+			<element name="attributeResponse" type="tns:AttributeResponse"
+				nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="AttributeResponse">
+		<complexContent>
+		<extension base="msr:MasterStatusResponse">
+		<sequence>
+			<element name="attributeId" type="long" minOccurs="1" nillable="false" />
+			<element name="name" type="string" minOccurs="1" nillable="false" />
+			<element name="value" type="string" minOccurs="1" nillable="false" />
+			<element name="registerDate" type="dateTime" minOccurs="1" />
+			<element name="comment" type="string" minOccurs="1" nillable="false" />
+			<element name="idSubscriberProfile" type="string" minOccurs="1" nillable="false" />
+			<element name="transactionId" type="string" minOccurs="1" nillable="false" />
+		</sequence>
+		</extension>
+		</complexContent>
+	</complexType>
+
+</schema>

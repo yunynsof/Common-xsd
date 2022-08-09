@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tigo.com.hn/ResponseJOSM"
+        elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.tigo.com.hn/ResponseJOSM"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+        jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+        xmlns:pref="http://www.tigo.com.hn/persistence/partitioing/V1"
+        xmlns:pref0="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+        xmlns:pref1="http://tigo.com.hn/gatewayConfig/V1"
+        xmlns:pref2="http://tigo.com.hn/BrokerConfig/V1"
+        xmlns:pref3="http://tigo.com.hn/OrchestratorConfig/V1"
+        xmlns:pref4="http://tigo.com.hn/autoCorrect/V1"
+        xmlns:pref5="http://tigo.com.hn/ProxyConfigType/V1"
+        xmlns:pref6="http://www.example.org/PartitioningMasterStatus"
+        xmlns:pref7="http://www.tigo.com.hn/persistence/Configuration/V1"
+        xmlns:pref8="http://tigo.com/josm/xquery/XqueryConfiguration/V1"
+        xmlns:pref9="http://tigo.com.hn/scheduler/configuration/V1"
+        xmlns:pref10="http://tigo.com.hn/scheduler/balancing/V1"
+        xmlns:pref11="http://tigo.com.hn/ServiceTask/V1"
+        xmlns:pref12="http://tigo.com.hn/PromotionEngine/PromotionEngineConfig/V1"
+        xmlns:pref13="http://tigo.com.hn/persistence/DatabaseErrorMapping/v1"
+        xmlns:pref14="http://tigo.com.hn/configuration/JOSMServiceConfiguration/V1"
+        xmlns:pref15="http://tigo.com.hn/persistence/DatabaseErrorMappingMap/v1">
+
+    <import schemaLocation="AdapterConfigType.xsd"
+            namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1">
+    </import>
+    <import schemaLocation="GatewayConfig.xsd"
+            namespace="http://tigo.com.hn/gatewayConfig/V1">
+    </import>
+    <import schemaLocation="BrokerConfig.xsd"
+            namespace="http://tigo.com.hn/BrokerConfig/V1">
+    </import>
+    <import schemaLocation="OrchestratorConfig.xsd"
+            namespace="http://tigo.com.hn/OrchestratorConfig/V1">
+    </import>
+    <import
+        schemaLocation="../../../autocorrect/xsd/AutoCorrectConfig.xsd"
+        namespace="http://tigo.com.hn/autoCorrect/V1" />
+
+    <import
+        schemaLocation="ServiceTaskConfig.xsd"
+        namespace="http://tigo.com.hn/ServiceTask/V1" />
+
+    <import schemaLocation="ProxyConfigType.xsd"
+            namespace="http://tigo.com.hn/ProxyConfigType/V1">
+    </import>
+
+    <import
+        schemaLocation="../../../profile/configuration/PartitioningMasterStatus.xsd"
+        namespace="http://www.example.org/PartitioningMasterStatus">
+    </import>
+
+    <import
+        schemaLocation="../../../persistence/configuration/xsd/Partitioing.xsd"
+        namespace="http://www.tigo.com.hn/persistence/partitioing/V1">
+    </import>
+
+    <import
+        schemaLocation="../../../persistence/configuration/xsd/Configuration.xsd"
+        namespace="http://www.tigo.com.hn/persistence/Configuration/V1">
+    </import>
+
+    <import
+        schemaLocation="../../../../../../../hn/com/tigo/josm/scheduler/configuration/xsd/SchedulerConfiguration.xsd"
+        namespace="http://tigo.com.hn/scheduler/configuration/V1">
+    </import>
+
+    <import
+        schemaLocation="../../../../../../../hn/com/tigo/josm/scheduler/configuration/xsd/Balancing.xsd"
+        namespace="http://tigo.com.hn/scheduler/balancing/V1">
+    </import>
+	
+    <import 
+        schemaLocation="../../../xquery/xsd/XqueryConfiguration.xsd"
+        namespace="http://tigo.com/josm/xquery/XqueryConfiguration/V1">
+    </import>
+	
+    <import schemaLocation="../../../promotion/xsd/PromotionEngineConfig.xsd"
+            namespace="http://tigo.com.hn/PromotionEngine/PromotionEngineConfig/V1"/>
+	
+    <import schemaLocation="../../../persistence/configuration/xsd/DatabaseErrorMapping.xsd"
+            namespace="http://tigo.com.hn/persistence/DatabaseErrorMapping/v1" />
+    
+    <import schemaLocation="JosmServiceConsumerConfiguration.xsd"
+            namespace="http://tigo.com.hn/configuration/JOSMServiceConfiguration/V1">
+    </import>
+    
+    <import schemaLocation="../../../persistence/configuration/xsd/DatabaseErrorMappingMap.xsd"
+            namespace="http://tigo.com.hn/persistence/DatabaseErrorMappingMap/v1" />
+
+    <element name="ResponseJOSM">
+        <complexType>
+            <sequence>
+                <element ref="tns:Configurations" minOccurs="0"
+                         maxOccurs="1" />
+                <element ref="tns:status" minOccurs="0" maxOccurs="1" />
+                <!-- <element name="Configurations" type="pref:ConfigurationType" /> 
+                <element name="status" type="pref:StatusType" /> -->
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="Configurations" type="tns:ConfigurationType" />
+    <element name="status" type="tns:StatusType" />
+
+    <complexType name="ConfigurationType">
+        <sequence>
+            <element name="configExpiration" type="long" minOccurs="1"
+                     maxOccurs="1" />
+            <element ref="pref0:AdapterConfig" minOccurs="0"
+                     maxOccurs="1" />
+            <element name="GatewayType" type="pref1:GatewayConfig"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="BrokerType" type="pref2:BrokerConfig"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="OrchestratorType"
+                     type="pref3:OrchestratorConfig" minOccurs="0" maxOccurs="1" />
+            <element name="AutoCorrectType" type="pref4:AutoCorrectType"
+                     minOccurs="0" maxOccurs="1" />
+            <element ref="pref5:ProxyConfig" minOccurs="0"
+                     maxOccurs="1" />
+            <element name="partitioningMasterStatusType"
+                     type="pref6:PartitioningMasterStatus" minOccurs="0" maxOccurs="1" />
+            <element name="partitioningType" type="pref:Partitioning"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="configurationType" type="pref7:Configuration"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="schedulerType"
+                     type="pref9:SchedulerConfiguration" minOccurs="0" maxOccurs="1" />
+            <element name="balanceType" type="pref10:Balancing"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="httpClientType" type="pref9:HttpClientConfiguration"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="serviceTaskType" type="pref11:ServiceTaskType"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="xqueryConfiguration" type="pref8:XqueryConfiguration"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="PromotionEngineConfig" type="pref12:promotionEngineConfig"
+                     minOccurs="0" maxOccurs="1" />
+            <element name="DatabaseErrorCodeType" type="pref13:databaseErrorMap"
+                     minOccurs="0" maxOccurs="1" />            
+            <element name="JOSMServiceType" type="pref14:UrlDetailService"
+                     minOccurs="0" maxOccurs="1" />
+             <element name="DatabaseErrorMapType" type="pref15:dataBaseErrorMappingMap"
+                     minOccurs="0" maxOccurs="1" /> 
+        </sequence>
+    </complexType>
+
+    <complexType name="StatusType">
+        <sequence>
+            <element name="status" type="string" minOccurs="1"
+                     maxOccurs="1">
+            </element>
+            <element name="code" type="string" minOccurs="1"
+                     maxOccurs="1">
+            </element>
+        </sequence>
+    </complexType>
+
+    <annotation>
+        <appinfo>
+            <jaxb:globalBindings generateIsSetMethod="true">
+                <xjc:serializable uid="1" />
+            </jaxb:globalBindings>
+        </appinfo>
+    </annotation>
+
+</schema>

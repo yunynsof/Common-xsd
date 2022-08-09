@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:xqueryConfiguration xmlns:tns="http://tigo.com/josm/xquery/XqueryConfiguration/V1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://tigo.com/josm/xquery/XqueryConfiguration/V1 XqueryConfiguration.xsd ">
+  <tns:datasources>
+    <tns:datasources>
+      <tns:name>tns:name</tns:name>
+      <tns:jndi>tns:jndi</tns:jndi>
+    </tns:datasources>
+  </tns:datasources>
+  <tns:expirationTime>0</tns:expirationTime>
+  <tns:maximumCapacityConnection>0</tns:maximumCapacityConnection>
+</tns:xqueryConfiguration>

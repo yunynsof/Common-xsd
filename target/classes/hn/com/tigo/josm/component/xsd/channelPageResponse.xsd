@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/component/channelPageResponse/V1"
+	xmlns:tns="http://tigo.com.hn/component/channelPageResponse/V1"		
+	elementFormDefault="qualified" 
+	xmlns:pref="http://www.tigo.com.hn/order/JOSMResponse/V1"	>
+	
+	
+	<import schemaLocation="JOSMResponse.xsd"
+		namespace="http://www.tigo.com.hn/order/JOSMResponse/V1"></import>	
+	
+	
+
+	<element name="channelDetail" type="tns:channelDetail" />
+	<complexType name="channelDetail" >	
+		<sequence>
+			<element name="idchannel" type="long" minOccurs="1" 	nillable="false" />				
+			<element name="descriptionChannel" type="string" minOccurs="1" nillable="false" />			
+		</sequence>
+	</complexType>
+
+	
+	<element name="channelDetailResponseService" type="tns:channelDetailResponseService" />
+	<complexType name="channelDetailResponseService">
+		<sequence>
+			<element name="channelDetails" type="tns:channelDetail" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+
+
+	<element name="channelPageResponse" type="tns:channelPageResponse"
+			substitutionGroup="pref:JOSMResponse" />
+	<complexType name="channelPageResponse">
+		<complexContent>
+			<extension base="pref:JOSMResponse">
+				<sequence>											
+					<element name="channels" type="tns:channelDetailResponseService" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+
+</schema>

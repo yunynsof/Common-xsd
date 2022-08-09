@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tigo.com.hn/adapter/AS400ProgramConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/adapter/AS400ProgramConfigType/V1"
+	xmlns:tns2="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<xsd:import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+
+	<xsd:simpleType name="EnumAS400Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="string" />
+			<xsd:enumeration value="decimal" />
+		</xsd:restriction>
+	</xsd:simpleType>
+		
+	<xsd:complexType name="AS400AdapterProgramType">
+		<xsd:complexContent>
+			<xsd:extension base="tns2:DriverType">
+				<xsd:sequence>
+                    <xsd:element name="as400ProgramName" type="xsd:string" maxOccurs="1" minOccurs="1" />
+                    <xsd:element name="as400ProgramLib" type="xsd:string" maxOccurs="1" minOccurs="1" />
+                    <xsd:element name="as400ParameterConfig"
+						type="tns:AS400ParameterType" maxOccurs="unbounded" minOccurs="1" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="AS400ParameterType">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="size" type="xsd:int" minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="output" type="xsd:boolean" />
+		<xsd:attribute name="complement" type="xsd:boolean" />
+		<xsd:attribute name="type" type="tns:EnumAS400Type" />
+		<xsd:attribute name="decimals" type="xsd:int" default="0"/>
+	</xsd:complexType>
+
+
+
+	<xsd:element name="as400AdapterProgramConfig"
+		type="tns:AS400AdapterProgramType">
+	</xsd:element>
+</xsd:schema>

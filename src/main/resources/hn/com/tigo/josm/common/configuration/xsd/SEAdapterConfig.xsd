@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://tigo.com.hn/SEAdapterConfig/V1"
+	xmlns:tns="http://tigo.com.hn/SEAdapterConfig/V1" 
+	xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+	
+	<import schemaLocation="AdapterConfigType.xsd" namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"/>
+	
+	<element name="SEAdapterConfig" type="tns:SEAdapterConfigType"
+	 substitutionGroup="tns1:AdapterConfig"/>
+
+	<complexType name="SEAdapterConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="total_nodes" type="string" minOccurs="1" maxOccurs="1" />
+					<element name="nodes" type="string" minOccurs="1" maxOccurs="1" />
+				</sequence>
+			</extension>
+			
+		</complexContent>
+	</complexType>
+	
+</schema>

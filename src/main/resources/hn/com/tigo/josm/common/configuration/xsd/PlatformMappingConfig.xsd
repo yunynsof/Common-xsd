@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tigo.com.hn/PlatformMappingConfigType/V1"
+	xmlns:tns="http://tigo.com.hn/PlatformMappingConfigType/V1" xmlns:tns1="http://www.tigo.com.hn/configuration/AdapterConfigType/V1"
+	elementFormDefault="qualified">
+
+	<import schemaLocation="AdapterConfigType.xsd"
+		namespace="http://www.tigo.com.hn/configuration/AdapterConfigType/V1" />
+
+	<element name="PlatformMappingConfig" type="tns:PlatformMappingConfigType"
+		substitutionGroup="tns1:AdapterConfig" />
+
+	<complexType name="PlatformMappingConfigType">
+		<complexContent>
+			<extension base="tns1:AdapterConfigType">
+				<sequence>
+					<element name="AdapterConfig" type="tns1:AdapterConfigType"
+						minOccurs="1" maxOccurs="1" />
+					<element name="configTimeOutPlatformMappingCache" type="long"
+						minOccurs="1" maxOccurs="1" />
+					<element name="configTimeOutCommonConfiguration" type="long"
+						minOccurs="1" maxOccurs="1" />
+					<element name="jndiCrudService" type="string" minOccurs="1"
+						maxOccurs="1" />
+					<element name="platformShortCodeSpecifications" type="tns:PlatformShortCodeSpecification"
+						nillable="true" minOccurs="0" maxOccurs="unbounded" />
+						
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	
+	<element name="platformShortCodeSpecifications" type="tns:PlatformShortCodeSpecification" nillable="true" />
+	<complexType name="PlatformShortCodeSpecification">
+		<sequence>
+			<element name="platformShortCode" type="string" minOccurs="1"
+				maxOccurs="1" nillable="false" />
+			<element name="platformRegexList" type="tns:PlatformRegexList" minOccurs="1"
+				maxOccurs="1" nillable="true"/>
+		</sequence>
+	</complexType>
+
+
+
+	<element name="platformRegexList" type="tns:PlatformRegexList" nillable="true" />
+	<complexType name="PlatformRegexList">
+		<sequence>
+			<element name="platformRegexListDetail" type="tns:PlatformRegexListDetail"
+				nillable="true" minOccurs="1"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PlatformRegexListDetail">
+		<sequence>
+			<element name="productId" type="string" nillable="true"
+				minOccurs="0" maxOccurs="1" />
+			<element name="orderType" type="string" nillable="true"
+				minOccurs="0" maxOccurs="1" />
+			<element name="quantity" type="string" nillable="true"
+				minOccurs="0" maxOccurs="1" />
+			<element name="regexExpresion" type="string" minOccurs="1"
+				maxOccurs="unbounded" nillable="true" />
+			<element name="separatorList" type="tns:PlatformSeparatorList"
+				minOccurs="1" maxOccurs="1" nillable="true" />
+		</sequence>
+	</complexType>
+	
+	
+
+
+	<element name="platformSeparatorList" type="tns:PlatformSeparatorList"
+		nillable="true" />
+	<complexType name="PlatformSeparatorList">
+		<sequence>
+			<element name="separatorCharacter" type="string" nillable="true"
+				minOccurs="0" maxOccurs="1" />
+			<element name="parameterNameList" type="tns:ParameterNameList"
+				nillable="true" minOccurs="0" maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="ParameterNameList">
+		<sequence>
+			<element name="parameter" type="string" minOccurs="0" maxOccurs="unbounded" 
+				nillable="false" />
+		</sequence>
+	</complexType>
+</schema>
