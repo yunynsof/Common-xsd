@@ -297,6 +297,18 @@
 						</configuration>
 					</execution>
 				</executions>
+				  <configuration>
+            <properties>
+                <property>
+                    <name>javax.xml.accessExternalSchema</name>
+                    <value>all</value>
+                </property>
+                <property>
+                    <name>javax.xml.accessExternalDTD</name>
+                    <value>all</value>
+                </property>
+            </properties>
+        </configuration>
 			</plugin>
 		</plugins>
 		<pluginManagement>
